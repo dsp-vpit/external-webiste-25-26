@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import type { NavLink as NavLinkType } from '../types';
 
@@ -14,69 +14,63 @@ const links: NavLinkType[] = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <nav className="bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex-shrink-0">
-            <img
-              className="h-8 w-auto"
-              src="/dsp-logo.svg"
-              alt="DSP Logo"
-            />
-          </Link>
+    <nav className="w-full bg-black/80 backdrop-blur-md border-b border-foreground/10 z-50 sticky top-0">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src="/images/dsp-logo.png"
+            alt="DSP Logo"
+            className="h-16 w-auto"
+            style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' }}
+          />
+          <span className="sr-only">Delta Sigma Pi Home</span>
+        </Link>
 
-          {/* Desktop menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {links.map(({ to, label }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  className={({ isActive }) =>
-                    `px-3 py-2 rounded-md text-sm font-medium ${
-                      isActive ? 'text-accent' : 'text-foreground hover:text-accent'
-                    }`
-                  }
-                >
-                  {label}
-                </NavLink>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-accent"
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8 items-center">
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
+                location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
+              }`}
+              onClick={() => setIsOpen(false)}
             >
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
+              {link.label}
+            </Link>
+          ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white/90 hover:text-accent p-2"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
+          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {links.map(({ to, label }) => (
-              <NavLink
-                key={to}
-                to={to}
-                className={({ isActive }) =>
-                  `block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive ? 'text-accent' : 'text-foreground hover:text-accent'
-                  }`
-                }
-                onClick={() => setIsOpen(false)}
-              >
-                {label}
-              </NavLink>
-            ))}
-          </div>
+        <div className="md:hidden bg-black/95 px-4 pb-6 pt-2 flex flex-col gap-4 items-center border-b border-foreground/10">
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
+                location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>
