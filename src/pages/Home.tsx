@@ -124,6 +124,21 @@ const Home = () => {
         </Link>
       </section>
 
+      {/* About Preview */}
+      <SectionWrapper className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-heading mb-8 text-white">About DSP</h2>
+          <div className="space-y-6 text-lg text-white/90">
+            <p>
+              Founded in 1927, the Beta Kappa Chapter of Delta Sigma Pi at the University of Texas at Austin
+              has been a cornerstone of business education and professional development for nearly a century.
+              Our chapter prides itself on fostering a community of ambitious, driven individuals who are
+              committed to excellence in both their academic and professional pursuits.
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* Image Carousel Section */}
       <SectionWrapper className="py-20 px-4 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
@@ -175,17 +190,34 @@ const Home = () => {
         </div>
       </SectionWrapper>
 
-      {/* About Preview */}
-      <SectionWrapper className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-heading mb-8 text-white">About DSP</h2>
-          <div className="space-y-6 text-lg text-white/90">
-            <p>
-              Founded in 1927, the Beta Kappa Chapter of Delta Sigma Pi at the University of Texas at Austin
-              has been a cornerstone of business education and professional development for nearly a century.
-              Our chapter prides itself on fostering a community of ambitious, driven individuals who are
-              committed to excellence in both their academic and professional pursuits.
-            </p>
+      {/* President's Letter Section */}
+      <SectionWrapper className="py-20 px-4 bg-background/60">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          {/* Image and Overlay */}
+          <div className="relative w-full md:w-1/2 max-w-xl flex flex-col items-center">
+            <img
+              src="/images/ec/President.jpeg"
+              alt="Parker Freeburg, President"
+              className="w-full aspect-[4/5] object-cover rounded-lg shadow-lg"
+            />
+            <div className="mt-4 bg-black/90 rounded px-6 py-4 w-full max-w-xs mx-auto">
+              <div className="text-white text-2xl font-bold leading-tight">Parker Freeburg</div>
+              <div className="text-white/80 text-sm mt-1">Beta Iota, President</div>
+            </div>
+          </div>
+          {/* Letter Content */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-heading mb-4 text-foreground">President's Letter</h2>
+            <div className="text-lg text-foreground/90 space-y-6">
+              <p className="font-semibold">Hey!</p>
+              <p>My name's Parker, and I serve as the President of the Beta Kappa Chapter of Delta Sigma Pi here at UT. I'd love to tell you about BK and why we see ourselves as a premier co-ed business fraternity.</p>
+              <p>Since its founding, Beta Kappa has strived to be an inclusive and successful professional organization. We pride ourselves on three pillars: Brotherhood, Professionalism, and Community Service. Our members take ownership in showing all three, looking to not only better ourselves but our school, Austin, and the world post-grad.</p>
+              <p>I've gained nearly everything from this organization: a sense of professional guidance my freshman year, a group of my closest friends that's only grown with each passing pledge class, and a definitive way to use what I've learned to give back, uplift others, and create a space where our members feel that achieving the impossible is within their hands. If my word isn't enough, I can promise you that any brother would say the same.</p>
+              <p>Looking back, I came to UT with a lot of fear: fear that I was alone, behind the curve, and that I would be drowned out by such a large campus. Then, I found DSP. Since my pledging semester, campus has felt smaller, and with that, my fears too. I've become more outgoing, entrepreneurial, and driven to help others navigate their time in college. I mean it when I say both my fondest memories and most meaningful contributions have stemmed from this brotherhood.</p>
+              <p>The momentum doesn't stop after graduation, either. Our alumni network is extensive, filled with brothers who have risen to the top of their fields and preserved their sense of self by helping others, too. It's never intimidating to reach out. As we like to say,</p>
+              <p className="italic text-accent font-semibold text-lg">"Once a brother, always a brother."</p>
+              <p>I highly encourage you to attend an info session to learn more. We're always looking for new energy and perspective. If anything you just read hits home, take a chance and act on it!</p>
+            </div>
           </div>
         </div>
       </SectionWrapper>
