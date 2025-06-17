@@ -130,7 +130,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading mb-12 text-center text-white">Active Pledge Classes</h2>
           <div className="space-y-4">
-            {pledgeClasses.map((pc, idx) => {
+            {pledgeClasses.map((pc) => {
               const [open, setOpen] = useState(false);
               return (
                 <div key={pc.name} className="rounded-lg border border-white/20 bg-background/70 overflow-hidden shadow-md">
