@@ -58,9 +58,44 @@ const pillars = [
     image: "/images/pillars/brocover.jpeg",
     briefText: 'Brotherhood means lifelong friendships and unforgettable memories.',
     learnMore: [
-      { title: 'Events', text: 'Socials, retreats, and more bring us together.', images: [] },
-      { title: 'Traditions', text: 'DSP traditions create a sense of belonging.', images: [] },
-      { title: 'Support', text: 'Brothers support each other through thick and thin.', images: [] },
+      { 
+        title: 'Formals', 
+        text: 'We clean up nice', 
+        images: [
+          '/images/pillars/bro/formal/formal1.jpeg',
+          '/images/pillars/bro/formal/formal2.jpeg',
+          '/images/pillars/bro/formal/formal3.jpeg',
+          '/images/pillars/bro/formal/formal4.jpeg',
+          '/images/pillars/bro/formal/formal5.jpg',
+          '/images/pillars/bro/formal/formal6.png',
+          '/images/pillars/bro/formal/formal7.png',
+          '/images/pillars/bro/formal/formal8.png',
+          '/images/pillars/bro/formal/formal9.png',
+        ]
+      },
+      { 
+        title: 'Fams', 
+        text: 'DSP fam line traditions create a sense of belonging.', 
+        images: [
+          '/images/pillars/bro/fam/fam1.jpeg',
+          '/images/pillars/bro/fam/fam2.jpeg',
+          '/images/pillars/bro/fam/fam3.jpeg',
+          '/images/pillars/bro/fam/fam4.png',
+          '/images/pillars/bro/fam/fam5.jpeg',
+          '/images/pillars/bro/fam/fam6.png',
+        ]
+      },
+      { 
+        title: 'Barge', 
+        text: 'On a boat in the middle of Lake Travis…', 
+        images: [
+          '/images/pillars/bro/boat/barge1.jpg',
+          '/images/pillars/bro/boat/barge2.png',
+          '/images/pillars/bro/boat/barge3.png',
+          '/images/pillars/bro/boat/barge4.png',
+          '/images/pillars/bro/boat/barge5.png',
+        ]
+      },
     ],
   }
 ];
@@ -253,10 +288,23 @@ const Pillars = () => {
               <p className="text-2xl md:text-3xl text-accent font-semibold drop-shadow-lg text-center">{pillar.tagline}</p>
             </div>
           </section>
-          {/* Two-column layout with carousel and brief text */}
+          {/* Two-column layout with image and brief text for Brotherhood, carousel for others */}
           <SectionWrapper className="py-12 px-4 flex flex-col items-center justify-center bg-background/80 border-b border-foreground/10">
-            {/* Use the same ExpandableSection layout for the main section */}
-            {pillar.title === 'Community Service' ? (
+            {pillar.title === 'Brotherhood' ? (
+              <div className="flex flex-col md:flex-row gap-8 md:gap-24 py-8 h-[60vh] md:h-[70vh] items-center justify-between">
+                <div className="md:w-3/5 w-full flex flex-col items-center justify-center h-full">
+                  <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
+                    <img src={'/images/pillars/bro/bro.jpeg'} alt="Brotherhood" className="w-full h-[50vh] md:h-[60vh] object-cover rounded-lg shadow-lg" />
+                  </div>
+                </div>
+                <div className="md:w-2/5 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left h-full">
+                  <h3 className="text-3xl md:text-4xl font-heading mb-4 text-accent">Brotherhood</h3>
+                  <p className="text-lg md:text-xl text-white/90 max-w-xl">
+                    Beta Kappa helps you build a network of close, life-long relationships. These relationships are both within the Beta Kappa chapter and within the organization of Delta Sigma Pi as a whole through regional and national events. The Beta Kappa chapter also hosts brotherhood activities each semester designed to help grow the relationships with the outstanding members of Beta Kappa. The relationships developed within the chapter last a lifetime beyond active collegiate membership.
+                  </p>
+                </div>
+              </div>
+            ) : pillar.title === 'Community Service' ? (
               <ExpandableSection info={{
                 title: pillar.title,
                 text: pillar.briefText,
