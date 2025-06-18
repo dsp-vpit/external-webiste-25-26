@@ -1,16 +1,6 @@
 import SectionWrapper from '../components/SectionWrapper';
 import { FaCalendarAlt, FaCoffee, FaInfoCircle, FaHandshake, FaUserTie, FaUsers, FaEnvelope, FaCheckCircle, FaFileAlt } from 'react-icons/fa';
 
-const timeline = [
-  { date: 'Sep 2', title: 'Info Session #1', icon: <FaInfoCircle className="text-accent" /> },
-  { date: 'Sep 4', title: 'Info Session #2 & Apps Open', icon: <FaInfoCircle className="text-accent" /> },
-  { date: 'Sep 8 - 12', title: 'Coffee Chats', icon: <FaCoffee className="text-accent" /> },
-  { date: 'Sep 9', title: 'CS Event', icon: <FaUsers className="text-accent" /> },
-  { date: 'Sep 11', title: 'Professional Event', icon: <FaUserTie className="text-accent" /> },
-  { date: 'Sep 12', title: 'Brotherhood Event', icon: <FaHandshake className="text-accent" /> },
-  { date: 'Sep 13', title: 'Apps Close', icon: <FaCalendarAlt className="text-accent" /> },
-];
-
 const shortcutLinks = [
   {
     title: 'Interest Form',
@@ -151,7 +141,7 @@ const Recruitment = () => {
       {/* Shortcut Links Section */}
       <SectionWrapper className="py-20 px-4 flex flex-col items-center justify-center bg-background/80">
         <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-          {shortcutLinks.map((card, idx) => (
+          {shortcutLinks.map((card) => (
             <div key={card.title} className="rounded-2xl border border-accent bg-white/10 backdrop-blur-md shadow-xl flex flex-col items-center p-8 text-center hover:scale-[1.03] transition-transform">
               {card.icon}
               <h3 className="text-2xl font-heading text-accent mb-2">{card.title}</h3>
