@@ -158,6 +158,37 @@ const About = () => {
           </div>
         </div>
       </SectionWrapper>
+
+      {/* About ΔΣΠ Section */}
+      <SectionWrapper className="py-20 px-4 bg-background/60">
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+          <h2 className="text-3xl md:text-4xl font-heading mb-8 text-accent">About ΔΣΠ</h2>
+          <img
+            src="/images/founders.png"
+            alt="Delta Sigma Pi Founders"
+            className="w-full max-w-md rounded-lg border-2 border-accent shadow-lg mb-8 object-contain bg-white/10"
+          />
+          <div className="space-y-6 text-lg text-foreground/80 mb-8">
+            <p>
+              Founded in 1907 at the New York University School of Commerce, Accounts and Finance by Alexander Frank Makay, Alfred Moysello and Henry Albert Tienken, and Harold Valentine Jacobs, Delta Sigma Pi is America's Foremost Business Fraternity. Currently based nationally out of Oxford, Ohio, the International Fraternity of Delta Sigma Pi has involved over 250,000 members since inception. Today, Delta Sigma Pi has 284 established collegiate chapters, 211 active collegiate chapters, and 56 active alumni chapters spread out across the country. Our philosophy encompasses all religious and cultural affiliations, includes both men and women, and stretches from coast to coast.
+            </p>
+            <p>
+              As America's Foremost Business Fraternity, the purpose of our organization is to foster the study of business in universities; to encourage scholarship, social activity and the association of students for their mutual advancement by research and practice; to promote closer affiliation between the commercial world and students of commerce, and to further a higher standard of commercial ethics and culture and the civic and commercial welfare of the community.
+            </p>
+            <p>
+              If you would like to learn more about DSP as a whole, we invite you to visit our fraternity's official national website.{' '}
+              <a
+                href="https://www.deltasigmapi.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent font-semibold underline hover:text-accent/80 transition-colors"
+              >
+                www.deltasigmapi.org
+              </a>
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
     </div>
   );
 };
