@@ -13,25 +13,16 @@ const pillars = [
     briefText: 'Professionalism is at the core of DSP. We offer workshops, networking, and mentorship to help you grow.',
     learnMore: [
       {
-        title: 'Workshops',
-        text: 'We host resume workshops, interview prep, and more to help you succeed.',
-        images: [
-          '/images/pillars/prof/prof1.jpeg',
-          '/images/pillars/prof/prof2.jpeg',
-          '/images/pillars/prof/prof3.jpeg',
-        ],
-      },
-      {
-        title: 'Networking',
-        text: 'Connect with alumni and business leaders at our exclusive events.',
+        title: 'Events & Activities',
+        text: 'Our chapter offers a wide range of professional events designed to prepare brothers for success in the business world. From mock interviews and resume reviews to industry deep dives and professional development panels, members gain valuable insights and hands-on experience. The DSPeaker Series brings in accomplished professionals to share their journeys, while company visits and coffee chats provide unique networking opportunities and real-world exposure.',
         images: [
           '/images/pillars/prof/prof4.jpeg',
           '/images/pillars/prof/prof5.jpg',
         ],
       },
       {
-        title: 'Mentorship',
-        text: 'Our mentorship program pairs you with experienced brothers for guidance.',
+        title: 'Alumni Network',
+        text: 'Delta Sigma Pi alumni have found success in internships and in full-time positions with companies across the board. Beta Kappa has seen its brothers snag positions with McKinsey & Co, BCG, Accenture, Deloitte, Microsoft, Apple, Tesla, Meta, Dell, Capital One, Goldman Sachs, Macy’s, Blackstone, Chevron, EY, PWC, KPMG, and many more.',
         images: [
           '/images/pillars/prof/prof6.png',
           '/images/pillars/prof/prof7.png',
@@ -44,7 +35,7 @@ const pillars = [
     tagline: "Impacting Our Community",
     description: "Our Community Service pillar empowers and encourages brothers to give back through impactful fundraisers and hands-on volunteering, creating meaningful change on the Forty Acres and beyond!",
     image: "/images/pillars/cscover.jpeg",
-    briefText: 'Community service has long been an important part of how the Beta Kappa chapter defines itself. We provide a variety of opportunities for brothers to give back to their community through organizations including the Ronald McDonald House, Urban Roots,  Period, Book Drive for Kids, and Autism Speaks to name a few. Beta Kappa has shown its commitment to developing meaningful relationships within the community and to bettering the lives of the people its brothers encounter',
+    briefText: 'Community service has long been an important part of how the Beta Kappa chapter defines itself. We provide a variety of opportunities for brothers to give back to their community through organizations including the Ronald McDonald House, Urban Roots,  Period, Book Drive for Kids, and Autism Speaks to name a few. Beta Kappa has shown its commitment to developing meaningful relationships within the community and to bettering the lives of the people its brothers encounter.',
     learnMore: [
       { title: 'Fundraisers', text: 'We organize fundraisers for local and national causes.', images: [] },
       { title: 'Volunteering', text: 'Brothers volunteer together to support the Austin community.', images: [] },
@@ -106,11 +97,13 @@ interface ExpandableSectionProps {
     title: string;
     text: string;
     images: string[];
+    // Add optional prop for layout direction
+    reverse?: boolean;
   };
 }
 
 const ExpandableSection = ({ info }: ExpandableSectionProps) => {
-  // Each info: { title, text, images }
+  // Each info: { title, text, images, reverse? }
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -143,8 +136,11 @@ const ExpandableSection = ({ info }: ExpandableSectionProps) => {
     return () => clearInterval(interval);
   }, [emblaApi, info.images]);
 
+  // Determine flex direction
+  const flexDirection = info.reverse ? 'md:flex-row-reverse' : 'md:flex-row';
+
   return (
-    <div className="flex flex-col md:flex-row gap-8 md:gap-24 py-8 h-[60vh] md:h-[70vh] items-center justify-between">
+    <div className={`flex flex-col ${flexDirection} gap-8 md:gap-24 py-8 h-[60vh] md:h-[70vh] items-center justify-between`}>
       <div className="md:w-3/5 w-full flex flex-col items-center justify-center h-full">
         {info.images && info.images.length > 0 ? (
           <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
@@ -182,9 +178,9 @@ const ExpandableSection = ({ info }: ExpandableSectionProps) => {
           <div className="w-full h-[50vh] md:h-[60vh] bg-foreground/10 rounded-lg flex items-center justify-center text-foreground/60 text-2xl">No images yet</div>
         )}
       </div>
-      <div className="md:w-2/5 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left h-full">
+      <div className={`md:w-2/5 w-full flex flex-col justify-center h-full mx-auto ${info.reverse ? 'md:items-end md:text-right md:pl-8' : 'md:items-start md:text-left md:pr-8'} items-center text-center`}>
         <h3 className="text-3xl md:text-4xl font-heading mb-4 text-accent">{info.title}</h3>
-        <p className="text-lg md:text-xl text-white/90 max-w-xl">{info.text}</p>
+        <p className="text-lg md:text-xl text-white/90 max-w-lg">{info.text}</p>
       </div>
     </div>
   );
@@ -353,9 +349,17 @@ const Pillars = () => {
                         <FundraisingDropdown />
                       </>
                     ) : (
-                      pillar.learnMore.map((info, idx) => (
-                        <ExpandableSection key={idx} info={info} />
-                      ))
+                      // Alternate layout for Professionalism section
+                      pillar.title === 'Professionalism'
+                        ? pillar.learnMore.map((info, idx) => (
+                            <ExpandableSection
+                              key={idx}
+                              info={{ ...info, reverse: idx % 2 === 0 }} // Switch: now 0th is reverse, 1st is not
+                            />
+                          ))
+                        : pillar.learnMore.map((info, idx) => (
+                            <ExpandableSection key={idx} info={info} />
+                          ))
                     )}
                   </div>
                 </motion.div>

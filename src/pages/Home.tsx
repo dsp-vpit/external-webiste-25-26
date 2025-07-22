@@ -204,8 +204,8 @@ const Home = () => {
                 aria-hidden="true"
               />
               <div className="absolute inset-0 w-full h-full bg-black/5" aria-hidden="true" />
-              <div className="relative z-10 flex flex-col items-center text-center p-8 h-full justify-center">
-                <h3 className="text-2xl font-heading mb-4 text-accent drop-shadow-lg">Professionalism</h3>
+              <div className="relative z-10 flex flex-col items-center text-center p-8 h-full">
+                <h3 className="text-2xl font-heading mb-4 text-accent drop-shadow-lg min-h-[32px] flex items-center justify-center">Professionalism</h3>
                 <p className="text-white/90 drop-shadow-md">
                   As the most professional fraternity on campus, brothers are afforded valuable opportunities to develop themselves. Each semester, the chapter hosts events to benefit its brothers as well as the community as a whole. These events include resume workshops, mock interviews, networking events, hosting guest speakers, and more. The fraternity includes a network of accomplished alumni who live around the world.
                 </p>
@@ -220,8 +220,8 @@ const Home = () => {
                 aria-hidden="true"
               />
               <div className="absolute inset-0 w-full h-full bg-black/5" aria-hidden="true" />
-              <div className="relative z-10 flex flex-col items-center text-center p-8 h-full justify-center">
-                <h3 className="text-2xl font-heading mb-4 text-accent drop-shadow-lg">Brotherhood</h3>
+              <div className="relative z-10 flex flex-col items-center text-center p-8 h-full">
+                <h3 className="text-2xl font-heading mb-4 text-accent drop-shadow-lg min-h-[32px] flex items-center justify-center">Brotherhood</h3>
                 <p className="text-white/90 drop-shadow-md">
                   Delta Sigma Pi is committed to helping its brothers build relationships that last a lifetime. The chapter hosts many events throughout the year that allow brothers to further connect with one another. Each member of a new pledge class is given a "big" and thus introduced into a family line. Families become a support group for each other. The Beta Kappa chapter is proud of the strong bonds it's helped nourish over the last 90 years.
                 </p>
@@ -236,10 +236,10 @@ const Home = () => {
                 aria-hidden="true"
               />
               <div className="absolute inset-0 w-full h-full bg-black/5" aria-hidden="true" />
-              <div className="relative z-10 flex flex-col items-center text-center p-8 h-full justify-center">
-                <h3 className="text-2xl font-heading mb-4 text-accent drop-shadow-lg">Community Service</h3>
+              <div className="relative z-10 flex flex-col items-center text-center p-8 h-full">
+                <h3 className="text-2xl font-heading mb-4 text-accent drop-shadow-lg min-h-[32px] flex items-center justify-center">Community Service</h3>
                 <p className="text-white/90 drop-shadow-md">
-                  Our Community Service pillar empowers and encourages brothers to give back through impactful fundraisers and hands-on volunteering, creating meaningful change on the Forty Acres and beyond!
+                Every year, the Beta Kappa chapter contributes thousands of dollars to support charities, providing brothers with an opportunity to improve the lives of others. In addition, each pledge class collectively raises money for a charity of their choice. These include the Pujols Family Foundation, Breast Cancer Resource Center, Lang Stuttering Institute, National Alliance on Mental Illness, among others.
                 </p>
               </div>
             </Link>

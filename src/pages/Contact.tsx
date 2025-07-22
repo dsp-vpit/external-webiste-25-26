@@ -15,8 +15,8 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <FaEnvelope className="text-accent" size={20} />
-                  <a href="mailto:texasdsp@gmail.com" className="text-foreground/80 hover:text-accent">
-                    texasdsp@gmail.com
+                  <a href="mailto:dsp-president@texasdsp.org" className="text-foreground/80 hover:text-accent">
+                    dsp-president@texasdsp.org
                   </a>
                 </div>
                 <div className="flex items-center gap-4">

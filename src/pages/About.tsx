@@ -26,19 +26,15 @@ const pledgeClasses = [
   {
     name: 'Beta Iota',
     members: [
-      'Reeba Abraham', 'Adriel Bustillos', 'Esteban Cantu', 'James Chong', 'Parker Freeburg',
-      'Amadee Garza', 'Freddy Guo', 'Ethan Harris', 'Tanya Kalidindi', 'Shashank Kashyap',
-      'Rachel Lehane', 'Aasritha Madisetty', 'Anusha Mittal', 'Varsha Namboodiri', 'Pranav Nair',
-      'Natalie Nguyen', 'Samhitha Thalluru', 'Shamus Wu', 'Rio Yokoyama',
+      'Reeba Abraham', 'Esteban Cantu', 'Parker Freeburg', 'Amadee Garza', 'Freddy Guo',
+      'Tanya Kalidindi', 'Aasritha Madisetty', 'Varsha Namboodiri', 'Shamus Wu', 'Rio Yokoyama',
     ],
   },
   {
     name: 'Beta Lambda',
     members: [
-      'Jide Adesanya', 'Daniella Bower', 'Joseramon Cardenas', 'Aryaman Chhawcharia', 'Melissa Jhaveri',
-      'Abhinav Kolli', 'Prabhav Kumbum', 'Angela Liu', 'Tanisha Padhi', 'Sohana Parikh',
-      'Aditi Reddy', 'Tej Reddy', 'Angel Salinas', 'Garima Talwar', 'Akhil Vinjamaram',
-      'Charles Wang', 'Dorothy Xu',
+      'Aryaman Chhawcharia', 'Melissa Jhaveri', 'Abhinav Kolli', 'Prabhav Kumbum', 'Tanisha Padhi',
+      'Aditi Reddy', 'Dorothy Xu',
     ],
   },
   {
@@ -55,17 +51,16 @@ const pledgeClasses = [
     members: [
       'Saathvik Chepyala', 'Esha Gajula', 'Apoorva Gobburu', 'Aditi Gupta', 'Evan Jin',
       'Manasvi Katuri', 'Colin Kirchhoff', 'Maggy Ma', 'Ramona Mahmoudkhani', 'Aditya Mudgal',
-      'Aarav Parekh', 'Arjun Ramesh', 'Preston Rumney', 'Jacqueline Saenz', 'Sean Sanchez',
-      'Tanya Sayooj', 'Anastasia Sewell', 'Parth Thakkar', 'Tyler Vacca',
+      'Aarav Parekh', 'Arjun Ramesh', 'Preston Rumney', 'Jacqueline Saenz', 'Tanya Sayooj',
+      'Anastasia Sewell', 'Parth Thakkar', 'Tyler Vacca',
     ],
   },
   {
     name: 'Beta Xi',
     members: [
-      'Krisha Arun', 'Esha Bandi', 'Rohan Bhardwaj', 'Sabine Choi', 'Riddhi Chowdhury',
-      'Aarav Goswami', 'Natnaele Gulte', 'Beomjun Kim', 'Meghana Kothamasu', 'Sarah Lagrange',
-      'Rishi Menon', 'Netra Patel', 'Tej Patel', 'Christian Patterson', 'Disha Sharma',
-      'Rithika Singadi', 'Brandon Spacco', 'Daniel Xu',
+      'Krisha Arun', 'Esha Bandi', 'Rohan Bhardwaj', 'Riddhi Chowdhury', 'Aarav Goswami',
+      'Natnaele Gulte', 'Beomjun Kim', 'Meghana Kothamasu', 'Sarah Lagrange', 'Rishi Menon',
+      'Netra Patel', 'Tej Patel', 'Christian Patterson', 'Disha Sharma', 'Rithika Singadi', 'Daniel Xu',
     ],
   },
   {
