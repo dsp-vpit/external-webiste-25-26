@@ -26,54 +26,121 @@ const pledgeClasses = [
   {
     name: 'Beta Iota',
     members: [
-      'Reeba Abraham', 'Esteban Cantu', 'Parker Freeburg', 'Amadee Garza', 'Freddy Guo',
-      'Tanya Kalidindi', 'Aasritha Madisetty', 'Varsha Namboodiri', 'Shamus Wu', 'Rio Yokoyama',
+      { name: 'Reeba Abraham', img: '/images/headhsots/Beta Iota/reebaAbraham.jpeg' },
+      { name: 'Esteban Cantu', img: '/images/headhsots/Beta Iota/estebanCantu.jpeg' },
+      { name: 'Parker Freeburg', img: '/images/headhsots/Beta Iota/parkerFreeburg.jpeg' },
+      { name: 'Amadee Garza', img: '/images/headhsots/Beta Iota/amadeeGarza.jpeg' },
+      { name: 'Freddy Guo', img: '/images/headhsots/Beta Iota/freddyGuo.jpeg' },
+      { name: 'Tanya Kalidindi', img: '/images/headhsots/Beta Iota/tanyaKalidindi.jpeg' },
+      { name: 'Aasritha Madisetty', img: '/images/headhsots/Beta Iota/aasrithaMadisetty.jpeg' },
+      { name: 'Varsha Namboodiri', img: '/images/headhsots/Beta Iota/varshaNamboodiri.jpeg' },
+      { name: 'Shamus Wu', img: '/images/headhsots/Beta Iota/shamusWu.jpeg' },
+      { name: 'Rio Yokoyama', img: '/images/headhsots/Beta Iota/rioYokoyama.jpeg' },
     ],
   },
   {
     name: 'Beta Lambda',
     members: [
-      'Aryaman Chhawcharia', 'Melissa Jhaveri', 'Abhinav Kolli', 'Prabhav Kumbum', 'Tanisha Padhi',
-      'Aditi Reddy', 'Dorothy Xu',
+      { name: 'Aryaman Chhawcharia', img: '/images/headhsots/Beta Lambda/aryamanChhawcharia.jpeg' },
+      { name: 'Melissa Jhaveri', img: '/images/headhsots/Beta Lambda/melissaJhaveri.jpeg' },
+      { name: 'Abhinav Kolli', img: '/images/headhsots/Beta Lambda/abhinavKolli.jpeg' },
+      { name: 'Prabhav Kumbum', img: '/images/headhsots/Beta Lambda/prabhavKumbum.jpeg' },
+      { name: 'Tanisha Padhi', img: '/images/headhsots/Beta Lambda/tanishaPadhi.jpeg' },
+      { name: 'Aditi Reddy', img: '/images/headhsots/Beta Lambda/aditiReddy.jpeg' },
+      { name: 'Dorothy Xu', img: '/images/headhsots/Beta Lambda/dorothyXu.jpeg' },
     ],
   },
   {
     name: 'Beta Mu',
     members: [
-      'Aadit Gandhi', 'Ann Vadakan', 'Alejandro Lopez', 'Alok Shah', 'Emma Awoseyi',
-      'Harry Deng', 'Isaac Lu', 'Jai Ramgopal', 'Maria Min', 'Mihir Bhatia',
-      'Mukunda Bodapati', 'Nitin Jaladanki', 'Riccardo Faramondi', 'Sajan Parikh', 'Saketh Koduri',
-      'Samantha Cruz', 'Simran Bajwa', 'Soumil Voma',
+      { name: 'Aadit Gandhi', img: '/images/headhsots/Beta Mu/aaditGandhi.jpeg' },
+      { name: 'Ann Vadakan', img: '/images/headhsots/Beta Mu/annVadakan.jpeg' },
+      { name: 'Alejandro Lopez', img: '/images/headhsots/Beta Mu/alejandroLopez.jpeg' },
+      { name: 'Alok Shah', img: '/images/headhsots/Beta Mu/alokShah.jpeg' },
+      { name: 'Emma Awoseyi', img: '/images/headhsots/Beta Mu/emmaAwoseyi.jpeg' },
+      { name: 'Harry Deng', img: '/images/headhsots/Beta Mu/harryDeng.jpeg' },
+      { name: 'Isaac Lu', img: '/images/headhsots/Beta Mu/isaacLu.jpeg' },
+      { name: 'Jai Ramgopal', img: '/images/headhsots/Beta Mu/jaiRamgopal.jpeg' },
+      { name: 'Maria Min', img: '/images/headhsots/Beta Mu/mariaMin.jpeg' },
+      { name: 'Mihir Bhatia', img: '/images/headhsots/Beta Mu/mihirBhatia.jpeg' },
+      { name: 'Mukunda Bodapati', img: '/images/headhsots/Beta Mu/mukundaBodapati.jpeg' },
+      { name: 'Nitin Jaladanki', img: '/images/headhsots/Beta Mu/nitinJaladanki.jpeg' },
+      { name: 'Riccardo Faramondi', img: '/images/headhsots/Beta Mu/riccardoFaramondi.jpeg' },
+      { name: 'Sajan Parikh', img: '/images/headhsots/Beta Mu/sajanParikh.jpeg' },
+      { name: 'Saketh Koduri', img: '/images/headhsots/Beta Mu/sakethKoduri.jpeg' },
+      { name: 'Samantha Cruz', img: '/images/headhsots/Beta Mu/samanthaCruz.jpeg' },
+      { name: 'Simran Bajwa', img: '/images/headhsots/Beta Mu/simranBajwa.jpeg' },
+      { name: 'Soumil Voma', img: '/images/headhsots/Beta Mu/soumilVoma.jpeg' },
     ],
   },
   {
     name: 'Beta Nu',
     members: [
-      'Saathvik Chepyala', 'Esha Gajula', 'Apoorva Gobburu', 'Aditi Gupta', 'Evan Jin',
-      'Manasvi Katuri', 'Colin Kirchhoff', 'Maggy Ma', 'Ramona Mahmoudkhani', 'Aditya Mudgal',
-      'Aarav Parekh', 'Arjun Ramesh', 'Preston Rumney', 'Jacqueline Saenz', 'Tanya Sayooj',
-      'Anastasia Sewell', 'Parth Thakkar', 'Tyler Vacca',
+      { name: 'Saathvik Chepyala', img: '/images/headhsots/Beta Nu/saathvikChepyala.jpeg' },
+      { name: 'Esha Gajula', img: '/images/headhsots/Beta Nu/eshaGajula.jpeg' },
+      { name: 'Apoorva Gobburu', img: '/images/headhsots/Beta Nu/apoorvaGobburu.jpeg' },
+      { name: 'Aditi Gupta', img: '/images/headhsots/Beta Nu/aditiGupta.jpeg' },
+      { name: 'Evan Jin', img: '/images/headhsots/Beta Nu/evanJin.jpeg' },
+      { name: 'Manasvi Katuri', img: '/images/headhsots/Beta Nu/manasviKaturi.jpeg' },
+      { name: 'Colin Kirchhoff', img: '/images/headhsots/Beta Nu/colinKirchhoff.jpeg' },
+      { name: 'Maggy Ma', img: '/images/headhsots/Beta Nu/maggyMa.jpeg' },
+      { name: 'Ramona Mahmoudkhani', img: '/images/headhsots/Beta Nu/ramonaMahmoudkhani.jpeg' },
+      { name: 'Aditya Mudgal', img: '/images/headhsots/Beta Nu/adityaMudgal.jpeg' },
+      { name: 'Aarav Parekh', img: '/images/headhsots/Beta Nu/aaravParekh.jpeg' },
+      { name: 'Arjun Ramesh', img: '/images/headhsots/Beta Nu/arjunRamesh.jpeg' },
+      { name: 'Preston Rumney', img: '/images/headhsots/Beta Nu/prestonRumney.jpeg' },
+      { name: 'Jacqueline Saenz', img: '/images/headhsots/Beta Nu/jacquelineSaenz.jpeg' },
+      { name: 'Tanya Sayooj', img: '/images/headhsots/Beta Nu/tanyaSayooj.jpeg' },
+      { name: 'Anastasia Sewell', img: '/images/headhsots/Beta Nu/anastasiaSewell.jpeg' },
+      { name: 'Parth Thakkar', img: '/images/headhsots/Beta Nu/parthThakkar.jpeg' },
+      { name: 'Tyler Vacca', img: '/images/headhsots/Beta Nu/tylerVacca.jpeg' },
     ],
   },
   {
     name: 'Beta Xi',
     members: [
-      'Krisha Arun', 'Esha Bandi', 'Rohan Bhardwaj', 'Riddhi Chowdhury', 'Aarav Goswami',
-      'Natnaele Gulte', 'Beomjun Kim', 'Meghana Kothamasu', 'Sarah Lagrange', 'Rishi Menon',
-      'Netra Patel', 'Tej Patel', 'Christian Patterson', 'Disha Sharma', 'Rithika Singadi', 'Daniel Xu',
+      { name: 'Krisha Arun', img: '/images/headhsots/Beta Xi/krishaArun.jpeg' },
+      { name: 'Esha Bandi', img: '/images/headhsots/Beta Xi/eshaBandi.jpeg' },
+      { name: 'Rohan Bhardwaj', img: '/images/headhsots/Beta Xi/rohanBhardwaj.jpeg' },
+      { name: 'Riddhi Chowdhury', img: '/images/headhsots/Beta Xi/riddhiChowdhury.jpeg' },
+      { name: 'Aarav Goswami', img: '/images/headhsots/Beta Xi/aaravGoswami.jpeg' },
+      { name: 'Natnaele Gulte', img: '/images/headhsots/Beta Xi/natnaeleGulte.jpeg' },
+      { name: 'Beomjun Kim', img: '/images/headhsots/Beta Xi/beomjunKim.jpeg' },
+      { name: 'Meghana Kothamasu', img: '/images/headhsots/Beta Xi/meghanaKothamasu.jpeg' },
+      { name: 'Sarah Lagrange', img: '/images/headhsots/Beta Xi/sarahLagrange.jpeg' },
+      { name: 'Rishi Menon', img: '/images/headhsots/Beta Xi/rishiMenon.jpeg' },
+      { name: 'Netra Patel', img: '/images/headhsots/Beta Xi/netraPatel.jpeg' },
+      { name: 'Tej Patel', img: '/images/headhsots/Beta Xi/tejPatel.jpeg' },
+      { name: 'Christian Patterson', img: '/images/headhsots/Beta Xi/christianPatterson.jpeg' },
+      { name: 'Disha Sharma', img: '/images/headhsots/Beta Xi/dishaSharma.jpeg' },
+      { name: 'Rithika Singadi', img: '/images/headhsots/Beta Xi/rithikaSingadi.jpeg' },
+      { name: 'Daniel Xu', img: '/images/headhsots/Beta Xi/danielXu.jpeg' },
     ],
   },
   {
     name: 'Beta Omicron',
     members: [
-      'Mitha Ananth', 'Daisy Chen', 'Leo Chen', 'Isaiah Duvvuri', 'Sathvik Enturi',
-      'Krish Gajera', 'Gabriella Grossman', 'Aadya Holla', 'Annika Kannookkadan', 'Allison Le',
-      'Nivy Manikandan', 'Ananshi Patel', 'Pedro Rocha', 'Connor Stewart',
+      { name: 'Mitha Ananth', img: '/images/headhsots/Beta Omicron/mithaAnanth.jpeg' },
+      { name: 'Daisy Chen', img: '/images/headhsots/Beta Omicron/daisyChen.jpeg' },
+      { name: 'Leo Chen', img: '/images/headhsots/Beta Omicron/leoChen.jpeg' },
+      { name: 'Isaiah Duvvuri', img: '/images/headhsots/Beta Omicron/isaiahDuvvuri.jpeg' },
+      { name: 'Sathvik Enturi', img: '/images/headhsots/Beta Omicron/sathvikEnturi.jpeg' },
+      { name: 'Krish Gajera', img: '/images/headhsots/Beta Omicron/krishGajera.jpeg' },
+      { name: 'Gabriella Grossman', img: '/images/headhsots/Beta Omicron/gabriellaGrossman.jpeg' },
+      { name: 'Aadya Holla', img: '/images/headhsots/Beta Omicron/aadyaHolla.jpeg' },
+      { name: 'Annika Kannookkadan', img: '/images/headhsots/Beta Omicron/annikaKannookkadan.jpeg' },
+      { name: 'Allison Le', img: '/images/headhsots/Beta Omicron/allisonLe.jpeg' },
+      { name: 'Nivy Manikandan', img: '/images/headhsots/Beta Omicron/nivyManikandan.jpeg' },
+      { name: 'Ananshi Patel', img: '/images/headhsots/Beta Omicron/ananshiPatel.jpeg' },
+      { name: 'Pedro Rocha', img: '/images/headhsots/Beta Omicron/pedroRocha.jpeg' },
+      { name: 'Connor Stewart', img: '/images/headhsots/Beta Omicron/connorStewart.jpeg' },
     ],
   },
 ];
 
 const About = () => {
+  const [openPledgeClass, setOpenPledgeClass] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2D1B4D] via-[#3D2B5D] to-[#4B3B6D]">
       {/* Mission Section */}
@@ -124,32 +191,38 @@ const About = () => {
       <SectionWrapper className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading mb-12 text-center text-white">Active Pledge Classes</h2>
-          <div className="space-y-4">
-            {pledgeClasses.map((pc) => {
-              const [open, setOpen] = useState(false);
-              return (
-                <div key={pc.name} className="rounded-lg border border-white/20 bg-background/70 overflow-hidden shadow-md">
-                  <button
-                    className="w-full flex items-center justify-between px-6 py-4 bg-background/90 hover:bg-background/80 transition-colors focus:outline-none"
-                    onClick={() => setOpen((prev) => !prev)}
-                  >
-                    <span className="text-lg md:text-xl font-bold tracking-wide text-accent uppercase">{pc.name}</span>
-                    <span className={`transition-transform duration-300 ${open ? 'rotate-90' : ''}`}>
-                      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M9 18l6-6-6-6"/></svg>
-                    </span>
-                  </button>
-                  {open && (
-                    <div className="px-6 py-4 bg-background/80 border-t border-white/10 animate-fade-in">
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-white/90 text-base">
-                        {pc.members.map((member) => (
-                          <li key={member} className="py-1">{member}</li>
-                        ))}
-                      </ul>
+          <div className="space-y-8">
+            {pledgeClasses.map((pc) => (
+              <div key={pc.name} className="rounded-lg border border-white/20 bg-background/70 overflow-hidden shadow-md">
+                <button
+                  className="w-full flex items-center justify-between px-6 py-4 bg-background/90 hover:bg-background/80 transition-colors focus:outline-none"
+                  onClick={() => setOpenPledgeClass((prev) => (prev === pc.name ? null : pc.name))}
+                >
+                  <span className="text-lg md:text-xl font-bold tracking-wide text-accent uppercase">{pc.name}</span>
+                  <span className={`transition-transform duration-300 ${openPledgeClass === pc.name ? 'rotate-90' : ''}`}>
+                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M9 18l6-6-6-6"/></svg>
+                  </span>
+                </button>
+                {openPledgeClass === pc.name && (
+                  <div className="px-6 py-8 bg-background/80 border-t border-white/10 animate-fade-in">
+                    {/* Headshots Grid Template */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                      {pc.members.map((member) => (
+                        <div key={member.name} className="flex flex-col items-center">
+                          <img
+                            src={member.img}
+                            alt={member.name}
+                            className="w-20 h-20 object-cover rounded-full border-2 border-accent shadow mb-2 bg-white/10"
+                            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder-headshot.png'; }}
+                          />
+                          <span className="text-white text-sm text-center font-medium leading-tight max-w-[8rem] break-words whitespace-normal">{member.name}</span>
+                        </div>
+                      ))}
                     </div>
-                  )}
-                </div>
-              );
-            })}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </SectionWrapper>
