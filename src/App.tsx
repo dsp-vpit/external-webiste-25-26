@@ -7,12 +7,14 @@ import Pillars from './pages/Pillars';
 import Recruitment from './pages/Recruitment';
 import Alumni from './pages/Alumni';
 import Contact from './pages/Contact';
+import BackToTop from './components/BackToTop';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Navbar />
+        <BackToTop />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

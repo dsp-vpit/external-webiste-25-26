@@ -3,6 +3,7 @@ import SectionWrapper from '../components/SectionWrapper';
 import useEmblaCarousel from 'embla-carousel-react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const pillars = [
   {
@@ -49,43 +50,20 @@ const pillars = [
     image: "/images/pillars/brocover.jpeg",
     briefText: 'Brotherhood means lifelong friendships and unforgettable memories.',
     learnMore: [
-      { 
-        title: 'Formals', 
-        text: 'We clean up nice', 
-        images: [
-          '/images/pillars/bro/formal/formal1.jpeg',
-          '/images/pillars/bro/formal/formal2.jpeg',
-          '/images/pillars/bro/formal/formal3.jpeg',
-          '/images/pillars/bro/formal/formal4.jpeg',
-          '/images/pillars/bro/formal/formal5.jpg',
-          '/images/pillars/bro/formal/formal6.png',
-          '/images/pillars/bro/formal/formal7.png',
-          '/images/pillars/bro/formal/formal8.png',
-          '/images/pillars/bro/formal/formal9.png',
-        ]
+      {
+        title: 'Barge + Tabs',
+        text: 'Once each semester, Beta Kappa organizes a barge event, providing brothers the opportunity to enjoy time together on Lake Travis. Throughout the semester, we also host regular events at local venues, allowing all brothers to gather, socialize, and strengthen their friendships within a casual, fun environment.',
+        images: [],
       },
-      { 
-        title: 'Fams', 
-        text: 'DSP fam line traditions create a sense of belonging.', 
-        images: [
-          '/images/pillars/bro/fam/fam1.jpeg',
-          '/images/pillars/bro/fam/fam2.jpeg',
-          '/images/pillars/bro/fam/fam3.jpeg',
-          '/images/pillars/bro/fam/fam4.png',
-          '/images/pillars/bro/fam/fam5.jpeg',
-          '/images/pillars/bro/fam/fam6.png',
-        ]
+      {
+        title: 'Texas/OU Weekend',
+        text: 'Every fall semester, brothers travel together to Dallas to participate in the historic Texas-OU rivalry game. The weekend features a variety of brotherhood activities, ranging from group meals and tailgating events to attending the game itself. This tradition creates memorable experiences for all brothers involved.',
+        images: [],
       },
-      { 
-        title: 'Barge', 
-        text: 'On a boat in the middle of Lake Travis…', 
-        images: [
-          '/images/pillars/bro/boat/barge1.jpg',
-          '/images/pillars/bro/boat/barge2.png',
-          '/images/pillars/bro/boat/barge3.png',
-          '/images/pillars/bro/boat/barge4.png',
-          '/images/pillars/bro/boat/barge5.png',
-        ]
+      {
+        title: 'IM Teams',
+        text: 'Beta Kappa brothers actively compete together in UT’s Intramural sports leagues, striving for championships and fostering teamwork. Our chapter participates in various sports, including basketball, volleyball, soccer, and flag football. Engaging in IM sports promotes brotherhood spirit, friendly competition, and collective pride among our members.',
+        images: [],
       },
     ],
   }
@@ -251,14 +229,25 @@ const fundraisingProjects = [
 
 const Pillars = () => {
   const [expanded, setExpanded] = useState([false, false, false]);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        let offset = 80;
+        if (id === 'brotherhood') {
+          offset = 120; // Use a larger offset for Brotherhood
+        }
+        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y });
+      }
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2D1B4D] via-[#3D2B5D] to-[#4B3B6D]">
-      <SectionWrapper className="h-[18vh] px-4 flex items-center justify-center">
-        <div className="max-w-4xl w-full flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-heading text-center text-white">Our Pillars</h1>
-        </div>
-      </SectionWrapper>
       {pillars.map((pillar, index) => (
         <div key={pillar.title}>
           {/* Hero Section for Pillar - full viewport height */}
@@ -284,39 +273,29 @@ const Pillars = () => {
               <p className="text-2xl md:text-3xl text-accent font-semibold drop-shadow-lg text-center">{pillar.tagline}</p>
             </div>
           </section>
-          {/* Two-column layout with image and brief text for Brotherhood, carousel for others */}
+          {/* Consistent ExpandableSection for all pillars */}
           <SectionWrapper className="py-12 px-4 flex flex-col items-center justify-center bg-background/80 border-b border-foreground/10">
-            {pillar.title === 'Brotherhood' ? (
-              <div className="flex flex-col md:flex-row gap-8 md:gap-24 py-8 h-[60vh] md:h-[70vh] items-center justify-between">
-                <div className="md:w-3/5 w-full flex flex-col items-center justify-center h-full">
-                  <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
-                    <img src={'/images/pillars/bro/bro.jpeg'} alt="Brotherhood" className="w-full h-[50vh] md:h-[60vh] object-cover rounded-lg shadow-lg" />
-                  </div>
-                </div>
-                <div className="md:w-2/5 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left h-full">
-                  <h3 className="text-3xl md:text-4xl font-heading mb-4 text-accent">Brotherhood</h3>
-                  <p className="text-lg md:text-xl text-white/90 max-w-xl">
-                    Beta Kappa helps you build a network of close, life-long relationships. These relationships are both within the Beta Kappa chapter and within the organization of Delta Sigma Pi as a whole through regional and national events. The Beta Kappa chapter also hosts brotherhood activities each semester designed to help grow the relationships with the outstanding members of Beta Kappa. The relationships developed within the chapter last a lifetime beyond active collegiate membership.
-                  </p>
-                </div>
-              </div>
-            ) : pillar.title === 'Community Service' ? (
-              <ExpandableSection info={{
+            <ExpandableSection
+              info={{
                 title: pillar.title,
-                text: pillar.briefText,
-                images: [
-                  '/images/pillars/cs/cs1.jpg',
-                  '/images/pillars/cs/cs2.jpg',
-                  '/images/pillars/cs/cs3.jpeg',
-                  '/images/pillars/cs/cs4.jpeg',
-                ]
-              }} />
-            ) : index === 0 ? (
-              <ExpandableSection info={{ title: pillar.title, text: pillar.briefText, images: pillar.learnMore.map(info => info.images).flat() }} />
-            ) : (
-              <ExpandableSection info={{ title: pillar.title, text: pillar.briefText, images: [] }} />
-            )}
-            {/* Learn more button */}
+                text:
+                  pillar.title === 'Brotherhood'
+                    ? 'Beta Kappa helps you build a network of close, life-long relationships. These relationships are both within the Beta Kappa chapter and within the organization of Delta Sigma Pi as a whole through regional and national events. The Beta Kappa chapter also hosts brotherhood activities each semester designed to help grow the relationships with the outstanding members of Beta Kappa. The relationships developed within the chapter last a lifetime beyond active collegiate membership.'
+                    : pillar.briefText,
+                images:
+                  pillar.title === 'Brotherhood'
+                    ? ['/images/pillars/bro/bro.jpeg']
+                    : pillar.title === 'Community Service'
+                      ? [
+                          '/images/pillars/cs/cs1.jpg',
+                          '/images/pillars/cs/cs2.jpg',
+                          '/images/pillars/cs/cs3.jpeg',
+                          '/images/pillars/cs/cs4.jpeg',
+                        ]
+                      : pillar.learnMore.map(info => info.images).flat(),
+              }}
+            />
+            {/* Learn more button and expandable content remain unchanged */}
             <button
               className="mt-8 text-accent flex flex-col items-center hover:underline focus:outline-none"
               onClick={() => setExpanded((prev) => prev.map((v, i) => (i === index ? !v : v)))}
@@ -326,7 +305,6 @@ const Pillars = () => {
                 <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
               </span>
             </button>
-            {/* Expandable content */}
             <AnimatePresence initial={false}>
               {expanded[index] && (
                 <motion.div
@@ -338,7 +316,6 @@ const Pillars = () => {
                   className="w-full mt-8 overflow-hidden"
                 >
                   <div className="flex flex-col gap-8">
-                    {/* Only show the first learnMore section for Community Service, then the fundraising dropdown */}
                     {pillar.title === 'Community Service' ? (
                       <>
                         <ExpandableSection info={{
@@ -349,12 +326,11 @@ const Pillars = () => {
                         <FundraisingDropdown />
                       </>
                     ) : (
-                      // Alternate layout for Professionalism section
-                      pillar.title === 'Professionalism'
+                      (pillar.title === 'Professionalism' || pillar.title === 'Brotherhood')
                         ? pillar.learnMore.map((info, idx) => (
                             <ExpandableSection
                               key={idx}
-                              info={{ ...info, reverse: idx % 2 === 0 }} // Switch: now 0th is reverse, 1st is not
+                              info={{ ...info, reverse: idx % 2 === 0 }}
                             />
                           ))
                         : pillar.learnMore.map((info, idx) => (

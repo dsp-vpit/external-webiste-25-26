@@ -144,7 +144,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2D1B4D] via-[#3D2B5D] to-[#4B3B6D]">
       {/* Mission Section */}
-      <SectionWrapper className="py-20 px-4">
+      <div className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-heading mb-8 text-center">Our Mission</h1>
           <div className="space-y-6 text-lg text-foreground/80">
@@ -164,10 +164,10 @@ const About = () => {
             </p>
           </div>
         </div>
-      </SectionWrapper>
+      </div>
 
       {/* EC Grid */}
-      <SectionWrapper className="py-20 px-4 bg-background/50">
+      <div className="py-20 px-4 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading mb-12 text-center">Executive Committee</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -179,13 +179,12 @@ const About = () => {
                   className="w-28 h-28 object-cover rounded-full mb-4 border-2 border-accent shadow"
                 />
                 <h3 className="text-lg font-heading font-bold text-foreground mb-1">{member.name}</h3>
-                <p className="text-accent text-sm font-semibold mb-2">{member.role}</p>
-                <p className="text-sm text-foreground/70">Short description or fun fact goes here.</p>
+                <p className="text-accent text-sm font-semibold">{member.role}</p>
               </div>
             ))}
           </div>
         </div>
-      </SectionWrapper>
+      </div>
 
       {/* Pledge Classes Section */}
       <SectionWrapper className="py-20 px-4">

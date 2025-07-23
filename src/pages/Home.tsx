@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import useEmblaCarousel from 'embla-carousel-react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -29,6 +29,8 @@ const letterAnim = {
 const Home = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -62,6 +64,12 @@ const Home = () => {
 
     return () => clearInterval(autoplay);
   }, [emblaApi]);
+
+  // Helper for robust pillar section navigation (copied from Navbar)
+  const handlePillarNav = (id: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.assign(`/pillars#${id}`);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2D1B4D] via-[#3D2B5D] to-[#4B3B6D]">
@@ -196,7 +204,7 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-heading mb-12 text-center text-white">Our Pillars</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Professionalism Card */}
-            <Link to="/pillars" className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
+            <a href="/pillars#professionalism" onClick={handlePillarNav('professionalism')} className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
               <img
                 src="/images/pillars/profcover.jpg"
                 alt="Professionalism Cover"
@@ -210,9 +218,9 @@ const Home = () => {
                   As the most professional fraternity on campus, brothers are afforded valuable opportunities to develop themselves. Each semester, the chapter hosts events to benefit its brothers as well as the community as a whole. These events include resume workshops, mock interviews, networking events, hosting guest speakers, and more. The fraternity includes a network of accomplished alumni who live around the world.
                 </p>
               </div>
-            </Link>
+            </a>
             {/* Brotherhood Card */}
-            <Link to="/pillars" className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
+            <a href="/pillars#brotherhood" onClick={handlePillarNav('brotherhood')} className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
               <img
                 src="/images/pillars/brocover.jpeg"
                 alt="Brotherhood Cover"
@@ -226,9 +234,9 @@ const Home = () => {
                   Delta Sigma Pi is committed to helping its brothers build relationships that last a lifetime. The chapter hosts many events throughout the year that allow brothers to further connect with one another. Each member of a new pledge class is given a "big" and thus introduced into a family line. Families become a support group for each other. The Beta Kappa chapter is proud of the strong bonds it's helped nourish over the last 90 years.
                 </p>
               </div>
-            </Link>
+            </a>
             {/* Community Service Card */}
-            <Link to="/pillars" className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
+            <a href="/pillars#community-service" onClick={handlePillarNav('community-service')} className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
               <img
                 src="/images/pillars/cscover.jpeg"
                 alt="Community Service Cover"
@@ -242,13 +250,13 @@ const Home = () => {
                 Every year, the Beta Kappa chapter contributes thousands of dollars to support charities, providing brothers with an opportunity to improve the lives of others. In addition, each pledge class collectively raises money for a charity of their choice. These include the Pujols Family Foundation, Breast Cancer Resource Center, Lang Stuttering Institute, National Alliance on Mental Illness, among others.
                 </p>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
 
       {/* President's Letter Section */}
-      <SectionWrapper className="py-20 px-4 bg-background/60">
+      <section className="py-20 px-4 bg-background/60">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           {/* Image and Overlay */}
           <div className="relative w-full md:w-1/2 max-w-xl flex flex-col items-center">
@@ -277,7 +285,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </section>
     </div>
   );
 };

@@ -78,7 +78,13 @@ const Navbar = () => {
                     className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
                       location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
                     }`}
-                    onClick={() => setIsOpen(false)}
+                    onClick={e => {
+                      setIsOpen(false);
+                      if (location.pathname === link.to) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
                   >
                     {link.label}
                   </Link>
@@ -117,7 +123,13 @@ const Navbar = () => {
                 className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
                   location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
                 }`}
-                onClick={() => setIsOpen(false)}
+                onClick={e => {
+                  setIsOpen(false);
+                  if (location.pathname === link.to) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
               >
                 {link.label}
               </Link>
@@ -139,16 +151,41 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-black/95 px-4 pb-6 pt-2 flex flex-col gap-4 items-center border-b border-foreground/10">
           {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
-                location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </Link>
+            link.label === 'Pillars' ? (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
+                  location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
+                }`}
+                onClick={e => {
+                  setIsOpen(false);
+                  if (location.pathname === link.to) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded ${
+                  location.pathname === link.to ? 'text-accent underline underline-offset-4' : ''
+                }`}
+                onClick={e => {
+                  setIsOpen(false);
+                  if (location.pathname === link.to) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
       )}
