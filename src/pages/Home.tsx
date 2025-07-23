@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import useEmblaCarousel from 'embla-carousel-react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -29,8 +29,7 @@ const letterAnim = {
 const Home = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const navigate = useNavigate();
-  const location = useLocation();
+
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
