@@ -5,6 +5,21 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
+const ouImages = [
+  '/images/pillars/bro/OU/ou1.JPG',
+  '/images/pillars/bro/OU/ou2.JPG',
+  '/images/pillars/bro/OU/ou3.JPG',
+  '/images/pillars/bro/OU/ou4.JPG',
+  '/images/pillars/bro/OU/ou5.JPG',
+  '/images/pillars/bro/OU/ou6.JPG',
+  '/images/pillars/bro/OU/ou7.JPG',
+];
+const imImages = [
+  '/images/pillars/bro/IMs/im1.jpg',
+  '/images/pillars/bro/IMs/im2.jpg',
+  '/images/pillars/bro/IMs/im3.jpg',
+];
+
 const pillars = [
   {
     title: "Professionalism",
@@ -12,22 +27,29 @@ const pillars = [
     description: "Our Professionalism pillar focuses on developing business acumen and professional skills through workshops, networking events, and mentorship programs.",
     image: "/images/pillars/profcover.jpg",
     briefText: 'Professionalism is at the core of DSP. We offer workshops, networking, and mentorship to help you grow.',
+    mainImages: [
+      '/images/pillars/prof/prof1.jpeg',
+      '/images/pillars/prof/prof2.jpeg',
+      '/images/pillars/prof/prof3.jpeg',
+      '/images/pillars/prof/prof4.jpeg',
+      '/images/pillars/prof/prof5.jpg',
+      '/images/pillars/prof/prof6.png',
+      '/images/pillars/prof/prof7.png',
+    ],
     learnMore: [
       {
         title: 'Events & Activities',
         text: 'Our chapter offers a wide range of professional events designed to prepare brothers for success in the business world. From mock interviews and resume reviews to industry deep dives and professional development panels, members gain valuable insights and hands-on experience. The DSPeaker Series brings in accomplished professionals to share their journeys, while company visits and coffee chats provide unique networking opportunities and real-world exposure.',
         images: [
-          '/images/pillars/prof/prof4.jpeg',
-          '/images/pillars/prof/prof5.jpg',
+          '/images/pillars/prof/case1.jpeg',
+          '/images/pillars/prof/case2.jpeg',
+          '/images/pillars/prof/case3.jpeg',
         ],
       },
       {
         title: 'Alumni Network',
         text: 'Delta Sigma Pi alumni have found success in internships and in full-time positions with companies across the board. Beta Kappa has seen its brothers snag positions with McKinsey & Co, BCG, Accenture, Deloitte, Microsoft, Apple, Tesla, Meta, Dell, Capital One, Goldman Sachs, Macy’s, Blackstone, Chevron, EY, PWC, KPMG, and many more.',
-        images: [
-          '/images/pillars/prof/prof6.png',
-          '/images/pillars/prof/prof7.png',
-        ],
+        images: ['/images/pillars/prof/work.jpeg'],
       },
     ],
   },
@@ -53,17 +75,17 @@ const pillars = [
       {
         title: 'Barge + Tabs',
         text: 'Once each semester, Beta Kappa organizes a barge event, providing brothers the opportunity to enjoy time together on Lake Travis. Throughout the semester, we also host regular events at local venues, allowing all brothers to gather, socialize, and strengthen their friendships within a casual, fun environment.',
-        images: [],
+        images: [], // handled by custom carousel
       },
       {
         title: 'Texas/OU Weekend',
         text: 'Every fall semester, brothers travel together to Dallas to participate in the historic Texas-OU rivalry game. The weekend features a variety of brotherhood activities, ranging from group meals and tailgating events to attending the game itself. This tradition creates memorable experiences for all brothers involved.',
-        images: [],
+        images: ouImages,
       },
       {
         title: 'IM Teams',
         text: 'Beta Kappa brothers actively compete together in UT’s Intramural sports leagues, striving for championships and fostering teamwork. Our chapter participates in various sports, including basketball, volleyball, soccer, and flag football. Engaging in IM sports promotes brotherhood spirit, friendly competition, and collective pride among our members.',
-        images: [],
+        images: imImages,
       },
     ],
   }
@@ -84,6 +106,7 @@ const ExpandableSection = ({ info }: ExpandableSectionProps) => {
   // Each info: { title, text, images, reverse? }
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -108,25 +131,46 @@ const ExpandableSection = ({ info }: ExpandableSectionProps) => {
   useEffect(() => {
     if (!emblaApi) return;
     if (!info.images || info.images.length <= 1) return;
+    if (isPaused) return;
     const interval = setInterval(() => {
       emblaApi.scrollNext();
     }, 4000); // 4 seconds
     return () => clearInterval(interval);
-  }, [emblaApi, info.images]);
+  }, [emblaApi, info.images, isPaused]);
 
-  // Determine flex direction
+  // Special layout for Barge + Tabs
+  if (info.title === 'Barge + Tabs') {
+    return (
+      <div className="flex flex-col items-center justify-center w-full px-4 md:px-0">
+        <h3 className="text-3xl md:text-4xl font-heading mb-4 text-accent text-center">{info.title}</h3>
+        <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 text-center">{info.text}</p>
+        <div className="w-full max-w-5xl mx-auto">
+          <BargeTabsCarousel />
+        </div>
+      </div>
+    );
+  }
+
+  // Responsive layout for all other sections
   const flexDirection = info.reverse ? 'md:flex-row-reverse' : 'md:flex-row';
-
   return (
-    <div className={`flex flex-col ${flexDirection} gap-8 md:gap-24 py-8 h-[60vh] md:h-[70vh] items-center justify-between`}>
+    <div className={`flex flex-col ${flexDirection} gap-6 md:gap-24 py-8 md:py-12 items-center justify-between px-4 md:px-0`}>
       <div className="md:w-3/5 w-full flex flex-col items-center justify-center h-full">
         {info.images && info.images.length > 0 ? (
-          <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
-            <div className="overflow-hidden rounded-lg shadow-lg w-full h-full" ref={emblaRef}>
+          <div className="relative w-full max-w-4xl h-48 md:h-[50vh] lg:h-[60vh] flex items-center justify-center">
+            <div
+              className="overflow-hidden rounded-lg shadow-lg w-full h-full"
+              ref={emblaRef}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
+              onTouchCancel={() => setIsPaused(false)}
+            >
               <div className="flex h-full">
                 {info.images.map((src: string, idx: number) => (
                   <div key={idx} className="flex-[0_0_100%] min-w-0 relative px-2 h-full flex items-center justify-center">
-                    <img src={src} alt={info.title + ' ' + (idx + 1)} className="w-full h-[50vh] md:h-[60vh] object-cover rounded-lg" />
+                    <img src={src} alt={info.title + ' ' + (idx + 1)} className="w-full h-48 md:h-[50vh] lg:h-[60vh] object-cover rounded-lg" />
                   </div>
                 ))}
               </div>
@@ -153,10 +197,10 @@ const ExpandableSection = ({ info }: ExpandableSectionProps) => {
             )}
           </div>
         ) : (
-          <div className="w-full h-[50vh] md:h-[60vh] bg-foreground/10 rounded-lg flex items-center justify-center text-foreground/60 text-2xl">No images yet</div>
+          <div className="w-full h-48 md:h-[50vh] lg:h-[60vh] bg-foreground/10 rounded-lg flex items-center justify-center text-foreground/60 text-2xl">No images yet</div>
         )}
       </div>
-      <div className={`md:w-2/5 w-full flex flex-col justify-center h-full mx-auto ${info.reverse ? 'md:items-end md:text-right md:pl-8' : 'md:items-start md:text-left md:pr-8'} items-center text-center`}>
+      <div className={`md:w-2/5 w-full flex flex-col justify-center h-full mx-auto ${info.reverse ? 'md:items-end md:text-right md:pl-8' : 'md:items-start md:text-left md:pr-8'} items-center text-center md:text-left`}>
         <h3 className="text-3xl md:text-4xl font-heading mb-4 text-accent">{info.title}</h3>
         <p className="text-lg md:text-xl text-white/90 max-w-lg">{info.text}</p>
       </div>
@@ -227,6 +271,21 @@ const fundraisingProjects = [
   },
 ];
 
+// Add this array for the Barge + Tabs images, alternating 2 tab then 1 barge
+const bargeTabImages = [
+  '/images/pillars/bro/bargeTab/tab1.JPG',
+  '/images/pillars/bro/bargeTab/tab2.JPG',
+  '/images/pillars/bro/bargeTab/barge1.JPG',
+  '/images/pillars/bro/bargeTab/tab3.jpg',
+  '/images/pillars/bro/bargeTab/barge2.JPG',
+  '/images/pillars/bro/bargeTab/tab5.JPG',
+  '/images/pillars/bro/bargeTab/tab6.jpg',
+  '/images/pillars/bro/bargeTab/barge3.JPG',
+  '/images/pillars/bro/bargeTab/tab7.jpg',
+  '/images/pillars/bro/bargeTab/tab8.jpeg',
+  '/images/pillars/bro/bargeTab/barge4.JPG',
+];
+
 const Pillars = () => {
   const [expanded, setExpanded] = useState([false, false, false]);
   const location = useLocation();
@@ -283,16 +342,18 @@ const Pillars = () => {
                     ? 'Beta Kappa helps you build a network of close, life-long relationships. These relationships are both within the Beta Kappa chapter and within the organization of Delta Sigma Pi as a whole through regional and national events. The Beta Kappa chapter also hosts brotherhood activities each semester designed to help grow the relationships with the outstanding members of Beta Kappa. The relationships developed within the chapter last a lifetime beyond active collegiate membership.'
                     : pillar.briefText,
                 images:
-                  pillar.title === 'Brotherhood'
-                    ? ['/images/pillars/bro/bro.jpeg']
-                    : pillar.title === 'Community Service'
-                      ? [
-                          '/images/pillars/cs/cs1.jpg',
-                          '/images/pillars/cs/cs2.jpg',
-                          '/images/pillars/cs/cs3.jpeg',
-                          '/images/pillars/cs/cs4.jpeg',
-                        ]
-                      : pillar.learnMore.map(info => info.images).flat(),
+                  pillar.title === 'Professionalism'
+                    ? (pillar.mainImages || [])
+                    : pillar.title === 'Brotherhood'
+                      ? ['/images/pillars/bro/bro.jpeg']
+                      : pillar.title === 'Community Service'
+                        ? [
+                            '/images/pillars/cs/cs1.jpg',
+                            '/images/pillars/cs/cs2.jpg',
+                            '/images/pillars/cs/cs3.jpeg',
+                            '/images/pillars/cs/cs4.jpeg',
+                          ]
+                        : pillar.learnMore.map(info => info.images).flat(),
               }}
             />
             {/* Learn more button and expandable content remain unchanged */}
@@ -371,6 +432,88 @@ function FundraisingDropdown() {
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+function BargeTabsCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  // Auto-scroll logic
+  useEffect(() => {
+    if (!emblaApi) return;
+    if (bargeTabImages.length <= 1) return;
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 4000); // 4 seconds
+    return () => clearInterval(interval);
+  }, [emblaApi, isPaused]);
+
+  return (
+    <div className="relative w-full h-[400px] flex items-center justify-center">
+      <div
+        className="overflow-hidden rounded-lg shadow-lg w-full h-full"
+        ref={emblaRef}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+        onTouchCancel={() => setIsPaused(false)}
+      >
+        <div className="flex h-full">
+          {bargeTabImages.map((src, idx) => (
+            <div key={idx} className="flex-[0_0_100%] md:flex-[0_0_50%] min-w-0 relative px-2 h-full flex items-center justify-center">
+              <img src={src} alt={`Barge/Tab ${idx + 1}`} className="w-full h-[400px] object-cover rounded-lg" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <button
+        onClick={scrollPrev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-[#2D1B4D] transition-colors"
+        aria-label="Previous slide"
+      >
+        <FaChevronLeft size={32} />
+      </button>
+      <button
+        onClick={scrollNext}
+        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-[#2D1B4D] transition-colors"
+        aria-label="Next slide"
+      >
+        <FaChevronRight size={32} />
+      </button>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {bargeTabImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => emblaApi?.scrollTo(idx)}
+            className={`w-3 h-3 rounded-full transition-colors ${idx === selectedIndex ? 'bg-white' : 'bg-white/30'}`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

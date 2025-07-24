@@ -13,8 +13,8 @@ const shortcutLinks = [
     title: 'Coffee Chat Form',
     description: "Sign up for a coffee chat with a brother to learn more about DSP.",
     icon: <FaCoffee className="text-accent text-3xl mb-2" />,
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSdz0PZpjnpPJnp0ZBAmDSgi8cJF33JqGg2QnnsgX29u1Rd_mQ/viewform?usp=sharing&ouid=105750311739019146529',
-    button: 'Sign Up for Coffee Chat',
+    link: '',
+    button: 'Form Coming Soon',
   },
 ];
 
@@ -146,14 +146,20 @@ const Recruitment = () => {
               {card.icon}
               <h3 className="text-2xl font-heading text-accent mb-2">{card.title}</h3>
               <p className="text-white/90 mb-6">{card.description}</p>
-              <a
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-accent text-[#2D1B4D] font-bold rounded-lg shadow hover:bg-accent/90 transition-colors text-lg"
-              >
-                {card.button}
-              </a>
+              {card.link ? (
+                <a
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-accent text-[#2D1B4D] font-bold rounded-lg shadow hover:bg-accent/90 transition-colors text-lg"
+                >
+                  {card.button}
+                </a>
+              ) : (
+                <span className="inline-block px-6 py-3 bg-accent text-[#2D1B4D] font-bold rounded-lg shadow opacity-70 cursor-not-allowed select-none text-lg">
+                  {card.button}
+                </span>
+              )}
             </div>
           ))}
         </div>

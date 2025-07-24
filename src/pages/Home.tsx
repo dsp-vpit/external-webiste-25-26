@@ -29,6 +29,7 @@ const letterAnim = {
 const Home = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
 
   const scrollPrev = useCallback(() => {
@@ -55,6 +56,7 @@ const Home = () => {
 
   // Auto-scroll functionality
   useEffect(() => {
+    if (isPaused) return;
     const autoplay = setInterval(() => {
       if (emblaApi) {
         emblaApi.scrollNext();
@@ -62,7 +64,7 @@ const Home = () => {
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(autoplay);
-  }, [emblaApi]);
+  }, [emblaApi, isPaused]);
 
   // Helper for robust pillar section navigation (copied from Navbar)
   const handlePillarNav = (id: string) => (e: React.MouseEvent) => {
@@ -150,14 +152,20 @@ const Home = () => {
       <SectionWrapper className="py-20 px-4 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
-            <div className="overflow-hidden" ref={emblaRef}>
+            <div className="overflow-hidden" ref={emblaRef}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
+              onTouchCancel={() => setIsPaused(false)}
+            >
               <div className="flex">
                 {images.map((image, index) => (
-                  <div key={index} className="flex-[0_0_50%] min-w-0 relative px-2">
+                  <div key={index} className="flex-[0_0_100%] md:flex-[0_0_50%] min-w-0 relative px-2">
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-[400px] object-cover rounded-lg shadow-xl"
+                      className={`w-full h-[400px] object-cover rounded-lg shadow-xl${image.src === '/images/carousel/image5.jpg' ? ' object-top' : ''}`}
                     />
                   </div>
                 ))}

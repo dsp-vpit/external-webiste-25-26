@@ -170,9 +170,10 @@ const About = () => {
       <div className="py-20 px-4 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading mb-12 text-center">Executive Committee</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {/* On mobile, use grid-cols-2 for 2 per row */}
             {ecMembers.map((member) => (
-              <div key={member.name} className="p-6 bg-background/60 rounded-lg border border-foreground/10 flex flex-col items-center text-center shadow-md">
+              <div key={member.name} className="p-4 sm:p-6 bg-background/60 rounded-lg border border-foreground/10 flex flex-col items-center text-center shadow-md">
                 <img
                   src={member.img}
                   alt={member.name}

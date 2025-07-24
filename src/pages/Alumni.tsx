@@ -37,14 +37,10 @@ const Alumni = () => {
           <h2 className="text-3xl font-heading mb-12 text-center">Alumni Spotlight</h2>
           <div className="p-8 bg-background/60 rounded-lg border border-foreground/10">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-32 h-32 bg-foreground/10 rounded-full"></div>
+              <img src="/images/ec/karley.jpeg" alt="Karley Zhang" className="w-32 h-32 object-cover rounded-full" />
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-heading mb-2">Alumni Name</h3>
-                <p className="text-accent mb-2">Class of 2020</p>
-                <p className="text-foreground/80 mb-4">Current Role at Company</p>
-                <p className="text-sm text-foreground/70">
-                  Brief bio about the alumnus and their journey after DSP.
-                </p>
+                <h3 className="text-2xl font-heading mb-2">Karley Zhang</h3>
+                <p className="text-accent mb-2">Investment Banking Analyst at Nomura</p>
               </div>
             </div>
           </div>
@@ -56,16 +52,15 @@ const Alumni = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-heading mb-12 text-center">Latest Newsletter</h2>
           <div className="p-8 bg-background/60 rounded-lg border border-foreground/10">
-            <h3 className="text-xl font-heading mb-4">Spring 2024 Newsletter</h3>
+            <h3 className="text-xl font-heading mb-4">Fall 2025 Newsletter</h3>
             <p className="text-foreground/80 mb-6">
               Stay updated with our latest chapter news, events, and achievements.
             </p>
-            <a
-              href="#"
-              className="inline-block px-6 py-3 bg-accent text-background rounded hover:opacity-80"
+            <span
+              className="inline-block px-6 py-3 bg-accent text-background rounded opacity-70 cursor-not-allowed select-none"
             >
-              Read Newsletter
-            </a>
+              Coming Soon
+            </span>
           </div>
         </div>
       </SectionWrapper>
