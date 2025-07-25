@@ -43,7 +43,7 @@ const Recruitment = () => {
       {/* Hero Section */}
       <section className="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
         <img
-          src="/images/recruitment.png"
+          src="public/images/recruitment.png"
           alt="Recruitment Banner"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
           aria-hidden="true"
