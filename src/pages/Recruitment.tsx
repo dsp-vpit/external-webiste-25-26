@@ -41,26 +41,35 @@ const Recruitment = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2D1B4D] via-[#3D2B5D] to-[#4B3B6D]">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
+      <section className="relative flex items-center justify-center w-full overflow-hidden aspect-[2.5/1] sm:aspect-auto sm:min-h-screen">
         <img
-          src="public/images/recruitment.png"
+          src="images/recruitment.png"
           alt="Recruitment Banner"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
           aria-hidden="true"
         />
-        <div className="relative z-10 flex flex-col items-center w-full h-full text-center" style={{ justifyContent: 'flex-start', minHeight: '100vh', paddingTop: '48vh' }}>
-          <h1 className="text-5xl md:text-7xl font-heading text-white mb-10 drop-shadow-lg tracking-wide">DRIVE TO SUCCESS</h1>
+        <div className="relative z-10 flex flex-col items-center justify-between w-full h-full min-h-0 sm:min-h-screen text-center">
+          <div />
           <button
-            className="px-8 py-4 bg-accent text-[#2D1B4D] text-xl font-bold rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-all cursor-not-allowed"
+            className="mb-12 w-11/12 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-8 py-4 bg-[#89CFF0] text-white text-xl font-bold rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-all cursor-not-allowed mx-auto hidden sm:block"
             disabled
           >
             Application Coming Soon
           </button>
         </div>
       </section>
+      {/* Mobile-only button below banner */}
+      <div className="block sm:hidden bg-background/60 w-full py-2 flex justify-center items-center">
+        <button
+          className="w-11/12 max-w-xs px-8 py-4 bg-accent text-[#2D1B4D] text-xl font-bold rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-all cursor-not-allowed"
+          disabled
+        >
+          Application Coming Soon
+        </button>
+      </div>
 
       {/* Timeline Section */}
-      <SectionWrapper className="py-20 px-4 bg-background/60">
+      <SectionWrapper className="py-4 sm:py-20 px-4 bg-background/60">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-heading mb-12 text-center text-white">Recruitment Timeline</h2>
           <div className="space-y-12">
