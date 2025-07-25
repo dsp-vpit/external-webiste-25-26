@@ -133,6 +133,17 @@ const pledgeClasses = [
       { name: 'Connor Stewart', img: '/images/headhsots/Beta Omicron/connorStewart.jpeg' },
     ],
   },
+  {
+    name: 'Beta Transfer',
+    members: [
+      { name: 'Laasya Ganti', img: '/images/headhsots/Beta Transfer/laasyaGanti.jpg' },
+      { name: 'Anagha Girish', img: '/images/headhsots/Beta Transfer/anaghaGirish.jpeg' },
+      { name: 'Vinay Majigga', img: '/images/headhsots/Beta Transfer/vinayMajjiga.jpeg' },
+      { name: 'Ahmed Mawla', img: '/images/headhsots/Beta Transfer/ahmedMawla.jpeg' },
+      { name: 'Ruhika Patra', img: '/images/headhsots/Beta Transfer/ruhikaPatra.jpeg' },
+      { name: 'Rohitashva Sanivarapu', img: '/images/headhsots/Beta Transfer/rohitashvaSanivarapu.jpeg' },
+    ],
+  },
 ];
 
 const About = () => {
