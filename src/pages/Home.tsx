@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: '/images/carousel/image1.jpeg', alt: 'DSP Event 1' },
+  { src: '/images/carousel/image1.png', alt: 'DSP Event 1' },
   { src: '/images/carousel/image2.jpeg', alt: 'DSP Event 2' },
   { src: '/images/carousel/image3.jpg', alt: 'DSP Event 3' },
   { src: '/images/carousel/image4.jpg', alt: 'DSP Event 4' },

@@ -18,6 +18,7 @@ const imImages = [
   '/images/pillars/bro/IMs/im1.jpg',
   '/images/pillars/bro/IMs/im2.jpg',
   '/images/pillars/bro/IMs/im3.jpg',
+  '/images/pillars/bro/IMs/im4.png',
 ];
 
 const pillars = [
@@ -69,7 +70,7 @@ const pillars = [
     title: "Brotherhood",
     tagline: "A Home Away From Home",
     description: "Our Brotherhood pillar creates lasting bonds through social events, traditions, and shared experiences that make DSP a home away from home.",
-    image: "/images/pillars/brocover.jpeg",
+    image: "/images/pillars/brocover.png",
     briefText: 'Brotherhood means lifelong friendships and unforgettable memories.',
     learnMore: [
       {
