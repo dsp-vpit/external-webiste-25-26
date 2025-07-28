@@ -229,7 +229,7 @@ const Home = () => {
             {/* Brotherhood Card */}
             <a href="/pillars#brotherhood" onClick={handlePillarNav('brotherhood')} className="relative block rounded-xl shadow-lg overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent">
               <img
-                src="/images/pillars/brocover.jpeg"
+                src="/images/pillars/brocover.png"
                 alt="Brotherhood Cover"
                 className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-multiply"
                 aria-hidden="true"
