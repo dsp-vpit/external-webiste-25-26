@@ -140,7 +140,7 @@ const ExpandableSection = ({ info }: ExpandableSectionProps) => {
   }, [emblaApi, info.images, isPaused]);
 
   // Special layout for Barge + Tabs
-  if (info.title === 'Barge + Tabs') {
+  if (info.title === 'Barge + Socials') {
     return (
       <div className="flex flex-col items-center justify-center w-full px-4 md:px-0">
         <h3 className="text-3xl md:text-4xl font-heading mb-4 text-accent text-center">{info.title}</h3>
