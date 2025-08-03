@@ -53,7 +53,7 @@ const pledgeClasses = [
     name: 'Beta Mu',
     members: [
       { name: 'Aadit Gandhi', img: '/images/headhsots/Beta Mu/aaditGandhi.jpeg' },
-      { name: 'Ann Vadakan', img: '/images/headhsots/Beta Mu/annVadakan.jpeg' },
+      { name: 'Ann Vadakkan', img: '/images/headhsots/Beta Mu/annVadakan.jpeg' },
       { name: 'Alejandro Lopez', img: '/images/headhsots/Beta Mu/alejandroLopez.jpeg' },
       { name: 'Alok Shah', img: '/images/headhsots/Beta Mu/alokShah.jpeg' },
       { name: 'Emma Awoseyi', img: '/images/headhsots/Beta Mu/emmaAwoseyi.jpeg' },
@@ -66,7 +66,7 @@ const pledgeClasses = [
       { name: 'Nitin Jaladanki', img: '/images/headhsots/Beta Mu/nitinJaladanki.jpeg' },
       { name: 'Riccardo Faramondi', img: '/images/headhsots/Beta Mu/riccardoFaramondi.jpeg' },
       { name: 'Sajan Parikh', img: '/images/headhsots/Beta Mu/sajanParikh.jpeg' },
-      { name: 'Saketh Koduri', img: '/images/headhsots/Beta Mu/sakethKoduri.jpeg' },
+      { name: 'Saketh Koduri', img: '/images/headhsots/Beta Mu/sakethKoduri.jpg' },
       { name: 'Samantha Cruz', img: '/images/headhsots/Beta Mu/samanthaCruz.jpeg' },
       { name: 'Simran Bajwa', img: '/images/headhsots/Beta Mu/simranBajwa.jpeg' },
       { name: 'Soumil Voma', img: '/images/headhsots/Beta Mu/soumilVoma.jpeg' },

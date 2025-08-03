@@ -74,7 +74,7 @@ const pillars = [
     briefText: 'Brotherhood means lifelong friendships and unforgettable memories.',
     learnMore: [
       {
-        title: 'Barge + Tabs',
+        title: 'Barge + Socials',
         text: 'Once each semester, Beta Kappa organizes a barge event, providing brothers the opportunity to enjoy time together on Lake Travis. Throughout the semester, we also host regular events at local venues, allowing all brothers to gather, socialize, and strengthen their friendships within a casual, fun environment.',
         images: [], // handled by custom carousel
       },
