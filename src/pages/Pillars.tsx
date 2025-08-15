@@ -281,7 +281,6 @@ const bargeTabImages = [
   '/images/pillars/bro/bargeTab/barge2.JPG',
   '/images/pillars/bro/bargeTab/tab5.JPG',
   '/images/pillars/bro/bargeTab/tab6.jpg',
-  '/images/pillars/bro/bargeTab/barge3.JPG',
   '/images/pillars/bro/bargeTab/tab7.jpg',
   '/images/pillars/bro/bargeTab/tab8.jpeg',
   '/images/pillars/bro/bargeTab/barge4.JPG',

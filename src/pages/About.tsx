@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 const ecMembers = [
   { name: "Parker Freeburg", role: "President", img: "/images/ec/President.jpeg" },
-  { name: "Saketh Koduri", role: "Chancellor", img: "/images/ec/Chancellor.jpeg" },
+  { name: "Saketh Koduri", role: "Chancellor", img: "/images/ec/Chancellor.jpg" },
   { name: "Tyler Vacca", role: "VP Finance", img: "/images/ec/VPF.jpeg" },
   { name: "Riccardo Faramondi", role: "Senior VP", img: "/images/ec/SVPricky.jpeg" },
-  { name: "Simran Bajwa", role: "Senior VP", img: "/images/ec/SVPsimran.jpeg" },
+  { name: "Simran Bajwa", role: "Senior VP", img: "/images/ec/SVPsimran1.jpeg" },
   { name: "Saathvik Chepyala", role: "VP Information Technology", img: "/images/ec/VPIT.jpg" },
   { name: "Aarav Parekh", role: "VP Community Service", img: "/images/ec/VPCSparekh.png" },
   { name: "Aarav Goswami", role: "VP Community Service", img: "/images/ec/VPCSgoswami.png" },
