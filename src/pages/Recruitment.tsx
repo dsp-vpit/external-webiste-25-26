@@ -81,7 +81,7 @@ const Recruitment = () => {
                 <h3 className="text-xl font-heading font-bold text-[#2D1B4D] uppercase tracking-wide mb-0">Info Session #1</h3>
               </div>
               <p className="text-[#2D1B4D]/90 text-lg">Learn about DSP and meet our brothers</p>
-              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 2</p>
+              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Aug 28</p>
             </div>
             {/* Info Session #2 & Apps Open */}
             <div className="relative pl-8 border-l-2 border-[#89CFF0]">
@@ -91,17 +91,17 @@ const Recruitment = () => {
                 <h3 className="text-xl font-heading font-bold text-[#2D1B4D] uppercase tracking-wide mb-0">Info Session #2 & Apps Open</h3>
               </div>
               <p className="text-[#2D1B4D]/90 text-lg">Learn about DSP and meet our brothers</p>
-              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 4</p>
+              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 2</p>
             </div>
             {/* Coffee Chats */}
             <div className="relative pl-8 border-l-2 border-[#89CFF0]">
               <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-[#89CFF0]"></div>
               <div className="flex items-center gap-3 mb-1">
                 <FaCoffee className="text-[#89CFF0] text-lg" />
-                <h3 className="text-xl font-heading font-bold text-[#2D1B4D] uppercase tracking-wide mb-0">Coffee Chats</h3>
+                <h3 className="text-xl font-heading font-bold text-[#2D1B4D] uppercase tracking-wide mb-0">Coffee Chats Open</h3>
               </div>
               <p className="text-[#2D1B4D]/90 text-lg">Get to know our brothers one on one</p>
-              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 8 - 12</p>
+              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 3</p>
             </div>
             {/* CS Event */}
             <div className="relative pl-8 border-l-2 border-[#89CFF0]">
@@ -111,7 +111,7 @@ const Recruitment = () => {
                 <h3 className="text-xl font-heading font-bold text-[#2D1B4D] uppercase tracking-wide mb-0">CS Event</h3>
               </div>
               <p className="text-[#2D1B4D]/90 text-lg">Give back with our brotherhood</p>
-              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 9</p>
+              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 4</p>
             </div>
             {/* Professional Event */}
             <div className="relative pl-8 border-l-2 border-[#89CFF0]">
@@ -121,7 +121,7 @@ const Recruitment = () => {
                 <h3 className="text-xl font-heading font-bold text-[#2D1B4D] uppercase tracking-wide mb-0">Professional Event</h3>
               </div>
               <p className="text-[#2D1B4D]/90 text-lg">Show off your professional skills in a fun setting</p>
-              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 11</p>
+              <p className="text-[#2D1B4D]/90 text-lg font-mono font-semibold mt-1">Sep 9</p>
             </div>
             {/* Brotherhood Event */}
             <div className="relative pl-8 border-l-2 border-[#89CFF0]">
