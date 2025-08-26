@@ -201,10 +201,10 @@ const Recruitment = () => {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-heading mb-4 text-white">Questions?</h2>
           <a
-            href="mailto:recruitment-noreply@texasdsp.org"
+            href="mailto:dsp-svp@texasdsp.org"
             className="inline-flex items-center gap-2 text-white text-lg font-bold hover:underline"
           >
-            <FaEnvelope /> recruitment-noreply@texasdsp.org
+            <FaEnvelope /> dsp-svp@texasdsp.org
           </a>
         </div>
       </SectionWrapper>
