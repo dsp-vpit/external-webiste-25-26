@@ -1,6 +1,7 @@
 export interface NavLink {
   to: string;
   label: string;
+  external?: boolean;
 }
 
 export interface ECMember {

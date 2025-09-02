@@ -13,8 +13,8 @@ const shortcutLinks = [
     title: 'Coffee Chat Form',
     description: "Sign up for a coffee chat with a brother to learn more about DSP.",
     icon: <FaCoffee className="text-[#89CFF0] text-3xl mb-2" />,
-    link: '',
-    button: 'Form Coming Soon',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSetuv8rp9iP2Q3V5JAUxSJZWcJpgV8kFrL2UG85pJiQybXylg/viewform?usp=dialog',
+    button: 'Sign Up for Coffee Chat',
   },
 ];
 
@@ -50,22 +50,26 @@ const Recruitment = () => {
         />
         <div className="relative z-10 flex flex-col items-center justify-between w-full h-full min-h-0 sm:min-h-screen text-center">
           <div />
-          <button
-            className="mb-12 w-11/12 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-8 py-4 bg-[#89CFF0] text-white text-xl font-bold rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-all cursor-not-allowed mx-auto hidden sm:block"
-            disabled
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdaysZgNEoCRDMfYuHcSFQ3yTxcxKZY6-XKr2Zpqrbkb5IQoA/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-12 w-11/12 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-8 py-4 bg-[#89CFF0] text-white text-xl font-bold rounded-lg shadow-lg hover:bg-[#89CFF0]/90 transition-all mx-auto hidden sm:block text-center"
           >
-            Application Coming Soon
-          </button>
+            Apply Now
+          </a>
         </div>
       </section>
       {/* Mobile-only button below banner */}
       <div className="block sm:hidden bg-background/60 w-full py-2 flex justify-center items-center">
-        <button
-          className="w-11/12 max-w-xs px-8 py-4 bg-[#89CFF0] text-white text-xl font-bold rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-all cursor-not-allowed"
-          disabled
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdaysZgNEoCRDMfYuHcSFQ3yTxcxKZY6-XKr2Zpqrbkb5IQoA/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-11/12 max-w-xs px-8 py-4 bg-[#89CFF0] text-white text-xl font-bold rounded-lg shadow-lg hover:bg-[#89CFF0]/90 transition-all text-center"
         >
-          Application Coming Soon
-        </button>
+          Apply Now
+        </a>
       </div>
 
       {/* Timeline Section */}

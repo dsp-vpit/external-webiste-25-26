@@ -10,6 +10,7 @@ const links: NavLinkType[] = [
   { to: '/recruitment', label: 'Recruitment' },
   { to: '/alumni', label: 'Alumni' },
   { to: '/contact', label: 'Contact' },
+  { to: 'https://dsp-bk.com', label: 'Member', external: true },
 ];
 
 const Navbar = () => {
@@ -116,6 +117,16 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+            ) : link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded"
+              >
+                {link.label}
+              </a>
             ) : (
               <Link
                 key={link.to}
@@ -168,6 +179,17 @@ const Navbar = () => {
               >
                 {link.label}
               </Link>
+            ) : link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-accent font-medium transition-colors px-2 py-1 rounded"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </a>
             ) : (
               <Link
                 key={link.to}
