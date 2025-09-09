@@ -138,10 +138,16 @@ const pledgeClasses = [
     members: [
       { name: 'Laasya Ganti', img: '/images/headhsots/Beta Transfer/laasyaGanti.jpg' },
       { name: 'Anagha Girish', img: '/images/headhsots/Beta Transfer/anaghaGirish.jpeg' },
+      { name: 'Mark Carella', img: '/images/headhsots/Beta Transfer/markCarella.jpeg' },
       { name: 'Vinay Majigga', img: '/images/headhsots/Beta Transfer/vinayMajjiga.jpeg' },
       { name: 'Ahmed Mawla', img: '/images/headhsots/Beta Transfer/ahmedMawla.jpeg' },
       { name: 'Ruhika Patra', img: '/images/headhsots/Beta Transfer/ruhikaPatra.jpeg' },
       { name: 'Rohitashva Sanivarapu', img: '/images/headhsots/Beta Transfer/rohitashvaSanivarapu.jpeg' },
+      { name: 'Nheya Kumar', img: '/images/headhsots/Beta Transfer/nheyaKumar.jpeg' },
+      { name: 'Ivanna Hernandez', img: '/images/headhsots/Beta Transfer/ivannaHernandez.jpeg' },
+      { name: 'Ritvik Veluru', img: '/images/headhsots/Beta Transfer/ritvikVeluru.jpeg' },
+      { name: 'Aaditya Ragam', img: '/images/headhsots/Beta Transfer/aadityaRagam.jpeg' },
+      { name: 'Joseph Jung', img: '/images/headhsots/Beta Transfer/josephJung.jpeg'},
     ],
   },
 ];
