@@ -3,11 +3,11 @@ import { FaCoffee, FaEnvelope, FaCheckCircle, FaFileAlt } from 'react-icons/fa';
 
 const shortcutLinks = [
   {
-    title: 'Interest Form',
-    description: "Let us know you're interested in DSP! We'll keep you updated.",
+    title: 'Application',
+    description: "Apply to join our brotherhood. Due 1/25 11:59PM",
     icon: <FaFileAlt className="text-[#1B5E20] text-3xl mb-2" />,
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSdgBAxeu9UqItqe66P52Ea-oGGr33yxKGPPkqJEEuz8L78tqA/viewform?usp=sharing&ouid=105750311739019146529',
-    button: 'Fill Out Interest Form',
+    button: 'Application Link',
   },
   {
     title: 'Coffee Chat Form',
