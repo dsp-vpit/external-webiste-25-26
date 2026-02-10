@@ -139,7 +139,7 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-heading mb-8 text-white">About DSP</h2>
           <div className="space-y-6 text-lg text-white/90">
             <p>
-              Founded in 1927, the Beta Kappa Chapter of Delta Sigma Pi at the University of Texas at Austin
+              Founded in 1930, the Beta Kappa Chapter of Delta Sigma Pi at the University of Texas at Austin
               has been a cornerstone of business education and professional development for nearly a century.
               Our chapter prides itself on fostering a community of ambitious, driven individuals who are
               committed to excellence in both their academic and professional pursuits.
