@@ -2,54 +2,31 @@ import SectionWrapper from '../components/SectionWrapper';
 import { useState } from 'react';
 
 const ecMembers = [
-  { name: "Parker Freeburg", role: "President", img: "/images/ec/President.jpeg" },
-  { name: "Prabhav Kumbum", role: "Chancellor", img: '/images/headhsots/Beta Lambda/prabhavKumbum.jpeg' },
-  { name: "Tyler Vacca", role: "VP Finance", img: "/images/ec/VPF.jpeg" },
-  { name: "Preston Rumney", role: "Senior VP", img: "/images/ec/VPER1.jpeg" },
-  { name: "Ramona Mahmoudkhani", role: "Senior VP", img: "/images/headhsots/Beta Nu/ramonaMahmoudkhani.jpeg" },
-  { name: "Saathvik Chepyala", role: "VP Information Technology", img: "/images/ec/VPIT.jpg" },
-  { name: "Aarav Parekh", role: "VP Community Service", img: "/images/ec/VPCSparekh.png" },
-  { name: "Aarav Goswami", role: "VP Community Service", img: "/images/ec/VPCSgoswami.png" },
-  { name: "Gabriella Grossman", role: "Brotherhood Chair", img: '/images/headhsots/Beta Omicron/gabriellaGrossman.jpeg' },
-  { name: "Netra Patel", role: "VP Activities", img: '/images/headhsots/Beta Xi/netraPatel.jpeg' },
-  { name: "Esha Bandi", role: "VP Activities", img: '/images/headhsots/Beta Xi/eshaBandi.jpeg' },
-  { name: "Sajan Parikh", role: "VP Professional Activities", img: "/images/ec/VPPAsajan.jpeg" },
-  { name: "Soumil Voma", role: "VP Professional Activities", img: '/images/headhsots/Beta Mu/soumilVoma.jpeg' },
-  { name: "Jacqueline Saenz", role: "VP Alumni Relations", img: "/images/ec/VPAR.jpeg" },
-  { name: "Preston Rumney", role: "VP External Relations", img: "/images/ec/VPER1.jpeg" },
-  { name: "Esha Gajula", role: "VP External Relations", img: "/images/ec/VPEResha.jpeg" },
-  { name: "Tanisha Padhi", role: "VP Scholarship & Awards", img: '/images/headhsots/Beta Lambda/tanishaPadhi.jpeg' },
-  { name: "Laasya Ganti", role: "VP Transfer Integration", img: '/images/headhsots/Beta Transfer/laasyaGanti.jpg' },
+  { name: "Saketh Koduri", role: "President", img: "/images/headhsots/Beta Mu/sakethKoduri.jpg" },
+  { name: "Connor Stewart", role: "Chancellor", img: "/images/headhsots/Beta Omicron/connorStewart.jpeg" },
+  { name: "Aarav Goswami", role: "Senior VP", img: "/images/headhsots/Beta Xi/aaravGoswami.jpeg" },
+  { name: "Aadya Holla", role: "Senior VP", img: "/images/headhsots/Beta Omicron/aadyaHolla.jpeg" },
+  { name: "Esha Bandi", role: "VP Chapter Operations", img: "/images/headhsots/Beta Xi/eshaBandi.jpeg" },
+  { name: "Annika Kannookkadan", role: "VP Finance", img: "/images/headhsots/Beta Omicron/annikaKannookkadan.jpeg" },
+  { name: "Krisha Arun", role: "VP Community Service", img: "/images/headhsots/Beta Xi/krishaArun.jpeg" },
+  { name: "Arjun Patil", role: "VP Community Service", img: "/images/headhsots/Beta Rho/arjunPatil.jpeg" },
+  { name: "Sara Han", role: "VP External Relations", img: "/images/headhsots/Beta Rho/saraHan.jpeg" },
+  { name: "Sanika Niranjan", role: "VP External Relations", img: "/images/headhsots/Beta Rho/sanikaNiranjan.jpeg" },
+  { name: "Esha Gajula", role: "VP Professional Activities", img: "/images/headhsots/Beta Nu/eshaGajula.jpeg" },
+  { name: "Aarav Goswami", role: "VP Professional Activities", img: "/images/headhsots/Beta Xi/aaravGoswami.jpeg" },
+  { name: "Aarav Parekh", role: "VP Professional Activities", img: "/images/headhsots/Beta Nu/aaravParekh.jpeg" },
+  { name: "Netra Patel", role: "VP Activities", img: "/images/headhsots/Beta Xi/netraPatel.jpeg" },
+  { name: "Esha Bandi", role: "VP Activities", img: "/images/headhsots/Beta Xi/eshaBandi.jpeg" },
+  { name: "Joel Abraham", role: "Brotherhood Chair", img: "/images/ec/joelAbraham.jpeg" },
+  { name: "Adhit Eswaramoorthi", role: "Brotherhood Chair", img: "/images/headhsots/Beta Rho/adhitEswaramoorthi.jpeg" },
+  { name: "Gina Singh", role: "VP Scholarship & Awards", img: "/images/headhsots/Beta Rho/ginaSingh.jpeg" },
+  { name: "Charlotte Sander", role: "VP Recruitment", img: "/images/headhsots/Beta Rho/charlotteSander.jpeg" },
+  { name: "Laasya Ganti", role: "VP Transfer Integration", img: "/images/headhsots/Beta Transfer/laasyaGanti.jpg" },
+  { name: "Tanya Bahety", role: "VP Alumni Relations", img: "/images/headhsots/Beta Rho/tanyaBahety.jpeg" },
+  { name: "Saathvik Chepyala", role: "VP Information Technology", img: "/images/headhsots/Beta Nu/saathvikChepyala.jpeg" },
 ];
 
 const pledgeClasses = [
-  {
-    name: 'Beta Iota',
-    members: [
-      { name: 'Reeba Abraham', img: '/images/headhsots/Beta Iota/reebaAbraham.jpeg' },
-      { name: 'Esteban Cantu', img: '/images/headhsots/Beta Iota/estebanCantu.jpeg' },
-      { name: 'Parker Freeburg', img: '/images/headhsots/Beta Iota/parkerFreeburg.jpeg' },
-      { name: 'Amadee Garza', img: '/images/headhsots/Beta Iota/amadeeGarza.jpeg' },
-      { name: 'Freddy Guo', img: '/images/headhsots/Beta Iota/freddyGuo.jpeg' },
-      { name: 'Tanya Kalidindi', img: '/images/headhsots/Beta Iota/tanyaKalidindi.jpeg' },
-      { name: 'Aasritha Madisetty', img: '/images/headhsots/Beta Iota/aasrithaMadisetty.jpeg' },
-      { name: 'Varsha Namboodiri', img: '/images/headhsots/Beta Iota/varshaNamboodiri.jpeg' },
-      { name: 'Shamus Wu', img: '/images/headhsots/Beta Iota/shamusWu.jpeg' },
-      { name: 'Rio Yokoyama', img: '/images/headhsots/Beta Iota/rioYokoyama.jpeg' },
-    ],
-  },
-  {
-    name: 'Beta Lambda',
-    members: [
-      { name: 'Aryaman Chhawcharia', img: '/images/headhsots/Beta Lambda/aryamanChhawcharia.jpeg' },
-      { name: 'Melissa Jhaveri', img: '/images/headhsots/Beta Lambda/melissaJhaveri.jpeg' },
-      { name: 'Abhinav Kolli', img: '/images/headhsots/Beta Lambda/abhinavKolli.jpeg' },
-      { name: 'Prabhav Kumbum', img: '/images/headhsots/Beta Lambda/prabhavKumbum.jpeg' },
-      { name: 'Tanisha Padhi', img: '/images/headhsots/Beta Lambda/tanishaPadhi.jpeg' },
-      { name: 'Aditi Reddy', img: '/images/headhsots/Beta Lambda/aditiReddy.jpeg' },
-      { name: 'Dorothy Xu', img: '/images/headhsots/Beta Lambda/dorothyXu.jpeg' },
-    ],
-  },
   {
     name: 'Beta Mu',
     members: [
@@ -64,6 +41,7 @@ const pledgeClasses = [
       { name: 'Maria Min', img: '/images/headhsots/Beta Mu/mariaMin.jpeg' },
       { name: 'Mihir Bhatia', img: '/images/headhsots/Beta Mu/mihirBhatia.jpeg' },
       { name: 'Mukunda Bodapati', img: '/images/headhsots/Beta Mu/mukundaBodapati.jpeg' },
+      { name: 'Nitin Jaladanki', img: '/images/headhsots/Beta Mu/nitinJaladanki.png' },
       { name: 'Riccardo Faramondi', img: '/images/headhsots/Beta Mu/riccardoFaramondi.jpeg' },
       { name: 'Sajan Parikh', img: '/images/headhsots/Beta Mu/sajanParikh.jpeg' },
       { name: 'Saketh Koduri', img: '/images/headhsots/Beta Mu/sakethKoduri.jpg' },
@@ -87,7 +65,6 @@ const pledgeClasses = [
       { name: 'Aditya Mudgal', img: '/images/headhsots/Beta Nu/adityaMudgal.jpeg' },
       { name: 'Aarav Parekh', img: '/images/headhsots/Beta Nu/aaravParekh.jpeg' },
       { name: 'Arjun Ramesh', img: '/images/headhsots/Beta Nu/arjunRamesh.jpeg' },
-      { name: 'Preston Rumney', img: '/images/headhsots/Beta Nu/prestonRumney.jpeg' },
       { name: 'Jacqueline Saenz', img: '/images/headhsots/Beta Nu/jacquelineSaenz.jpeg' },
       { name: 'Tanya Sayooj', img: '/images/headhsots/Beta Nu/tanyaSayooj.jpeg' },
       { name: 'Anastasia Sewell', img: '/images/headhsots/Beta Nu/anastasiaSewell.jpeg' },
@@ -110,6 +87,7 @@ const pledgeClasses = [
       { name: 'Rishi Menon', img: '/images/headhsots/Beta Xi/rishiMenon.jpeg' },
       { name: 'Netra Patel', img: '/images/headhsots/Beta Xi/netraPatel.jpeg' },
       { name: 'Tej Patel', img: '/images/headhsots/Beta Xi/tejPatel.jpeg' },
+      { name: 'Christian Patterson', img: '/images/headhsots/Beta Xi/christianPatterson.jpeg' },
       { name: 'Disha Sharma', img: '/images/headhsots/Beta Xi/dishaSharma.jpeg' },
       { name: 'Rithika Singadi', img: '/images/headhsots/Beta Xi/rithikaSingadi.jpeg' },
       { name: 'Daniel Xu', img: '/images/headhsots/Beta Xi/danielXu.jpeg' },
@@ -127,7 +105,6 @@ const pledgeClasses = [
       { name: 'Gabriella Grossman', img: '/images/headhsots/Beta Omicron/gabriellaGrossman.jpeg' },
       { name: 'Aadya Holla', img: '/images/headhsots/Beta Omicron/aadyaHolla.jpeg' },
       { name: 'Annika Kannookkadan', img: '/images/headhsots/Beta Omicron/annikaKannookkadan.jpeg' },
-      { name: 'Allison Le', img: '/images/headhsots/Beta Omicron/allisonLe.jpeg' },
       { name: 'Nivy Manikandan', img: '/images/headhsots/Beta Omicron/nivyManikandan.jpeg' },
       { name: 'Ananshi Patel', img: '/images/headhsots/Beta Omicron/ananshiPatel.jpeg' },
       { name: 'Pedro Rocha', img: '/images/headhsots/Beta Omicron/pedroRocha.jpeg' },
@@ -157,6 +134,30 @@ const pledgeClasses = [
       { name: 'Bobby Williams', img: '/images/headhsots/Beta Rho/bobbyWilliams.jpeg' },
       { name: 'Carlos Wu Cuan', img: '/images/headhsots/Beta Rho/carlosWuCuan.jpeg' },
       { name: 'Aileen Wu', img: '/images/headhsots/Beta Rho/aileenWu.jpeg' },
+    ],
+  },
+  {
+    name: 'Beta Tau',
+    members: [
+      { name: 'Neal Bhatia', img: '/images/headhsots/Beta Tau/nealBhatia.jpeg' },
+      { name: 'Zach Butler', img: '/images/headhsots/Beta Tau/zachButler.jpeg' },
+      { name: 'Angad Dhingra', img: '/images/headhsots/Beta Tau/angadDhingra.jpeg' },
+      { name: 'Mateo Doehner', img: '/images/headhsots/Beta Tau/mateoDoehner.png' },
+      { name: 'Ananya Ganni', img: '/images/headhsots/Beta Tau/ananyaGanni.jpeg' },
+      { name: 'Maddie Herrera', img: '/images/headhsots/Beta Tau/maddieHerrera.jpeg' },
+      { name: 'Kavya Mandalapu', img: '/images/headhsots/Beta Tau/kavyaMandalapu.jpeg' },
+      { name: 'Armaan Nayar', img: '/images/headhsots/Beta Tau/armaanNayar.png' },
+      { name: 'Aanya Nuna', img: '/images/headhsots/Beta Tau/aanyaNuna.jpeg' },
+      { name: 'Chloe Oakley', img: '/images/headhsots/Beta Tau/chloeOakley.png' },
+      { name: 'Varshita Parupudi', img: '/images/headhsots/Beta Tau/varshitaParupudi.jpeg' },
+      { name: 'Dhavasri Rajesh', img: '/images/headhsots/Beta Tau/dhavasriRajesh.png' },
+      { name: 'Varun Rastogi', img: '/images/headhsots/Beta Tau/varunRastogi.jpeg' },
+      { name: 'Saachit Rathi', img: '/images/headhsots/Beta Tau/saachitRathi.jpeg' },
+      { name: 'Luke Rowe', img: '/images/headhsots/Beta Tau/lukeRowe.png' },
+      { name: 'Kaylee Shaw', img: '/images/headhsots/Beta Tau/kayleeShaw.jpeg' },
+      { name: 'Rohan Shome', img: '/images/headhsots/Beta Tau/rohanShome.png' },
+      { name: 'Juliette Yonezawa', img: '/images/headhsots/Beta Tau/julietteYonezawa.jpeg' },
+      { name: 'Jaden Yue', img: '/images/headhsots/Beta Tau/jadenYue.jpeg' },
     ],
   },
   {
@@ -213,7 +214,7 @@ const About = () => {
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {/* On mobile, use grid-cols-2 for 2 per row */}
             {ecMembers.map((member) => (
-              <div key={member.name} className="p-4 sm:p-6 bg-background/60 rounded-lg border border-foreground/10 flex flex-col items-center text-center shadow-md">
+              <div key={`${member.name}-${member.role}`} className="p-4 sm:p-6 bg-background/60 rounded-lg border border-foreground/10 flex flex-col items-center text-center shadow-md">
                 <img
                   src={member.img}
                   alt={member.name}
@@ -253,7 +254,7 @@ const About = () => {
                             src={member.img}
                             alt={member.name}
                             className="w-20 h-20 object-cover rounded-full border-2 border-accent shadow mb-2 bg-white/10"
-                            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder-headshot.png'; }}
+                            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder-headshot.svg'; }}
                           />
                           <span className="text-white text-sm text-center font-medium leading-tight max-w-[8rem] break-words whitespace-normal">{member.name}</span>
                         </div>

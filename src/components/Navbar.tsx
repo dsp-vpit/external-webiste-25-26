@@ -8,7 +8,6 @@ const links: NavLinkType[] = [
   { to: '/about', label: 'About' },
   { to: '/pillars', label: 'Pillars' },
   { to: '/recruitment', label: 'Recruitment' },
-  { to: '/alumni', label: 'Alumni' },
   { to: '/contact', label: 'Contact' },
   { to: 'https://dsp-bk.com', label: 'Member', external: true },
 ];

@@ -6,16 +6,22 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: '/images/carousel/image1.png', alt: 'DSP Event 1' },
-  { src: '/images/carousel/image2.jpeg', alt: 'DSP Event 2' },
-  { src: '/images/carousel/image3.jpg', alt: 'DSP Event 3' },
-  { src: '/images/carousel/image4.jpg', alt: 'DSP Event 4' },
-  { src: '/images/carousel/image5.jpg', alt: 'DSP Event 5' },
-  { src: '/images/carousel/image6.jpeg', alt: 'DSP Event 6' },
-  { src: '/images/carousel/image7.jpeg', alt: 'DSP Event 7' },
-  { src: '/images/carousel/image8.jpeg', alt: 'DSP Event 8' },
-  { src: '/images/carousel/image9.png', alt: 'DSP Event 9' },
-  { src: '/images/carousel/image10.jpg', alt: 'DSP Event 10' },
+  { src: '/images/carousel/outrip2.jpg', alt: 'Brothers on the Red River Rivalry trip' },
+  { src: '/images/carousel/formal9.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal4.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal7.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/induction1.jpg', alt: 'New brothers at induction' },
+  { src: '/images/carousel/formal3.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal8.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal1.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/outrip1.jpg', alt: 'Brothers on the bus to the Red River Rivalry' },
+  { src: '/images/carousel/formal10.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal5.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal6.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal11.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/formal2.jpg', alt: 'Brothers at formal' },
+  { src: '/images/carousel/partybus1.jpg', alt: 'Brothers on the party bus' },
+  { src: '/images/carousel/formal12.jpg', alt: 'Brothers at formal' },
 ];
 
 const heroTitle = 'Delta Sigma Pi';
@@ -165,7 +171,7 @@ const Home = () => {
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className={`w-full h-[400px] object-cover rounded-lg shadow-xl${image.src === '/images/carousel/image5.jpg' ? ' object-top' : ''}`}
+                      className="w-full h-[400px] object-cover rounded-lg shadow-xl"
                     />
                   </div>
                 ))}
@@ -268,13 +274,13 @@ const Home = () => {
           {/* Image and Overlay */}
           <div className="relative w-full md:w-1/2 max-w-xl flex flex-col items-center">
             <img
-              src="/images/ec/President.jpeg"
-              alt="Parker Freeburg, President"
+              src="/images/headhsots/Beta Mu/sakethKoduri.jpg"
+              alt="Saketh Koduri, President"
               className="w-full aspect-[4/5] object-cover rounded-lg shadow-lg"
             />
             <div className="mt-4 bg-black/90 rounded px-6 py-4 w-full max-w-xs mx-auto">
-              <div className="text-white text-2xl font-bold leading-tight">Parker Freeburg</div>
-              <div className="text-white/80 text-sm mt-1">Beta Iota, President</div>
+              <div className="text-white text-2xl font-bold leading-tight">Saketh Koduri</div>
+              <div className="text-white/80 text-sm mt-1">Beta Mu, President</div>
             </div>
           </div>
           {/* Letter Content */}
@@ -282,7 +288,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-heading mb-4 text-foreground">President's Letter</h2>
             <div className="text-lg text-foreground/90 space-y-6">
               <p className="font-semibold">Hey!</p>
-              <p>My name's Parker, and I serve as the President of the Beta Kappa Chapter of Delta Sigma Pi here at UT. I'd love to tell you about BK and why we see ourselves as a premier co-ed business fraternity.</p>
+              <p>My name's Saketh, and I serve as the President of the Beta Kappa Chapter of Delta Sigma Pi here at UT. I'd love to tell you about BK and why we see ourselves as a premier co-ed business fraternity.</p>
               <p>Since its founding, Beta Kappa has strived to be an inclusive and successful professional organization. We pride ourselves on three pillars: Brotherhood, Professionalism, and Community Service. Our members take ownership in showing all three, looking to not only better ourselves but our school, Austin, and the world post-grad.</p>
               <p>I've gained nearly everything from this organization: a sense of professional guidance my freshman year, a group of my closest friends that's only grown with each passing pledge class, and a definitive way to use what I've learned to give back, uplift others, and create a space where our members feel that achieving the impossible is within their hands. If my word isn't enough, I can promise you that any brother would say the same.</p>
               <p>Looking back, I came to UT with a lot of fear: fear that I was alone, behind the curve, and that I would be drowned out by such a large campus. Then, I found DSP. Since my pledging semester, campus has felt smaller, and with that, my fears too. I've become more outgoing, entrepreneurial, and driven to help others navigate their time in college. I mean it when I say both my fondest memories and most meaningful contributions have stemmed from this brotherhood.</p>
