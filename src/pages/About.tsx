@@ -2,9 +2,9 @@ import SectionWrapper from '../components/SectionWrapper';
 import { useState } from 'react';
 
 const ecMembers = [
-  { name: "Saketh Koduri", role: "President", img: "/images/headhsots/Beta Mu/sakethKoduri.jpg" },
+  { name: "Saketh Koduri", role: "President", img: "/images/ec/sakethKoduri.jpeg" },
   { name: "Connor Stewart", role: "Chancellor", img: "/images/headhsots/Beta Omicron/connorStewart.jpeg" },
-  { name: "Aarav Goswami", role: "Senior VP", img: "/images/headhsots/Beta Xi/aaravGoswami.jpeg" },
+  { name: "Aarav Goswami", role: "Senior VP", img: "/images/ec/aaravGoswami.jpeg" },
   { name: "Aadya Holla", role: "Senior VP", img: "/images/headhsots/Beta Omicron/aadyaHolla.jpeg" },
   { name: "Esha Bandi", role: "VP Chapter Operations", img: "/images/headhsots/Beta Xi/eshaBandi.jpeg" },
   { name: "Annika Kannookkadan", role: "VP Finance", img: "/images/headhsots/Beta Omicron/annikaKannookkadan.jpeg" },
@@ -13,7 +13,7 @@ const ecMembers = [
   { name: "Sara Han", role: "VP External Relations", img: "/images/headhsots/Beta Rho/saraHan.jpeg" },
   { name: "Sanika Niranjan", role: "VP External Relations", img: "/images/headhsots/Beta Rho/sanikaNiranjan.jpeg" },
   { name: "Esha Gajula", role: "VP Professional Activities", img: "/images/headhsots/Beta Nu/eshaGajula.jpeg" },
-  { name: "Aarav Goswami", role: "VP Professional Activities", img: "/images/headhsots/Beta Xi/aaravGoswami.jpeg" },
+  { name: "Aarav Goswami", role: "VP Professional Activities", img: "/images/ec/aaravGoswami.jpeg" },
   { name: "Aarav Parekh", role: "VP Professional Activities", img: "/images/headhsots/Beta Nu/aaravParekh.jpeg" },
   { name: "Netra Patel", role: "VP Activities", img: "/images/headhsots/Beta Xi/netraPatel.jpeg" },
   { name: "Esha Bandi", role: "VP Activities", img: "/images/headhsots/Beta Xi/eshaBandi.jpeg" },

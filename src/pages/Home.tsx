@@ -274,7 +274,7 @@ const Home = () => {
           {/* Image and Overlay */}
           <div className="relative w-full md:w-1/2 max-w-xl flex flex-col items-center">
             <img
-              src="/images/headhsots/Beta Mu/sakethKoduri.jpg"
+              src="/images/ec/sakethKoduri.jpeg"
               alt="Saketh Koduri, President"
               className="w-full aspect-[4/5] object-cover rounded-lg shadow-lg"
             />
