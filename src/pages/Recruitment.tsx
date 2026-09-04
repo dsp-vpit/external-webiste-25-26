@@ -1,7 +1,8 @@
 import SectionWrapper from '../components/SectionWrapper';
 import { FaEnvelope, FaCheckCircle } from 'react-icons/fa';
 
-const interestFormUrl = 'https://forms.gle/phUcbS22zyNAazDw5';
+const applicationUrl =
+  'https://docs.google.com/forms/d/e/1FAIpQLSde38zO30XKq93vd9VamBIaFmvU0vycnw8FCG5wjz9LqL_VNw/viewform?usp=dialog';
 
 const requirements = [
   {
@@ -36,17 +37,17 @@ const Recruitment = () => {
             className="w-full max-w-md rounded-lg shadow-2xl border border-white/10"
           />
           <a
-            href={interestFormUrl}
+            href={applicationUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 w-11/12 max-w-[280px] sm:max-w-[320px] md:max-w-[360px] px-6 sm:px-8 py-3 sm:py-4 bg-accent text-[#2D1B4D] text-lg sm:text-xl font-bold rounded-lg shadow-lg hover:bg-accent/90 transition-all text-center"
           >
-            Interest Form
+            Apply Now
           </a>
         </div>
       </section>
 
-      {/* Interest Form Section */}
+      {/* Application Section */}
       <SectionWrapper className="py-20 px-4 bg-background/50">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <img
@@ -55,19 +56,19 @@ const Recruitment = () => {
             className="w-full max-w-sm rounded-lg shadow-lg border border-white/10"
           />
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-heading mb-4 text-accent">Interested in Rushing?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading mb-4 text-accent">Ready to Apply?</h2>
             <p className="text-lg text-foreground/80 mb-8">
-              Fill out our interest form and we'll keep you in the loop on everything you
-              need to know about Fall '26 recruitment — info sessions, events, and how to
-              meet our brothers.
+              Fill out our application to be considered for Fall '26 recruitment, and we'll
+              be in touch with next steps — info sessions, events, and how to meet our
+              brothers.
             </p>
             <a
-              href={interestFormUrl}
+              href={applicationUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-accent text-[#2D1B4D] font-bold rounded-lg shadow hover:bg-accent/90 transition-colors text-lg"
             >
-              Interest Form
+              Apply Now
             </a>
           </div>
         </div>
